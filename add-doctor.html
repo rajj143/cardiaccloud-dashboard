@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cardianex</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="font/flat-icon/flaticon.css" rel="stylesheet">
+    <!-- Google icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        main {
+            padding-top: 0 !important;
+        }
+        
+        .md-form input[type=date],
+        .md-form input[type=datetime-local],
+        .md-form input[type=email],
+        .md-form input[type=number],
+        .md-form input[type=password],
+        .md-form input[type=search-md],
+        .md-form input[type=search],
+        .md-form input[type=tel],
+        .md-form input[type=text],
+        .md-form input[type=time],
+        .md-form input[type=url],
+        .md-form textarea.md-textarea {
+            color: #000;
+        }
+        
+        #searcharea [type=checkbox]+label,
+        #searcharea-physcn [type=checkbox]+label,
+        #searcharea-physcn [type=radio]+label,
+        #searcharea [type=radio]+label {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #000;
+        }
+        
+        [type=checkbox]+label:before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            width: 15px;
+            height: 15px;
+            z-index: 0;
+            border: 1.5px solid #8a8a8a;
+            border-radius: 1px;
+            margin-top: 2px;
+            -webkit-transition: .2s;
+            transition: .2s;
+        }
+        
+        .dt-tme span {
+            display: block;
+        }
+        
+        .dt-tme {
+            position: relative;
+        }
+        
+        .cardianex-table .table th,
+        .cardianex-table .table td {
+            color: #000;
+            /* padding: .90rem .35rem; */
+            padding: .60rem .35rem;
+            font-size: 0.8rem;
+        }
+        
+        .cardianex-table .table th {
+            font-weight: 500;
+        }
+        
+        .cardianex-table .table td {
+            font-weight: 400;
+        }
+        
+        .cardianex-table .table .edit-icons .dropdown-menu i {
+            border: none;
+            color: inherit;
+        }
+        
+        .cardianex-table .table .edit-icons span i {
+            cursor: pointer;
+            border: 1px solid #ddd;
+            padding: 5px 5px;
+            border-radius: 4px;
+            color: #6c757d;
+        }
+        
+        .cardianex-table .table tr {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .cardianex-table .table-responsive {
+            overflow-y: hidden;
+        }
+        
+        .dropdown-content li>a,
+        .dropdown-content li>span {
+            font-weight: 400;
+        }
+        
+        .dropdown-submenu {
+            position: relative;
+        }
+        
+        .view {
+            overflow: visible;
+        }
+        
+        .btn-span::after,
+        .btn-cog::after,
+        .cardianex-table span::after {
+            display: none;
+        }
+        
+        .btn.btn-sm {
+            font-size: 0.8rem;
+            text-transform: capitalize;
+            padding: .4rem .5rem;
+        }
+        
+        .table td [type=checkbox]+label,
+        [type=radio]+label {
+            font-size: .9rem;
+        }
+        
+        .date {
+            position: absolute;
+            top: 0;
+            left: 10px;
+        }
+        
+        .cardianex-table .table .edit-icons span {
+            display: inline;
+        }
+        
+        .time {
+            position: absolute;
+            top: 15px;
+            left: 5px;
+        }
+        
+        .records .card-header {
+            background-color: #114786 !important;
+        }
+        
+        .cardianex-table .address {
+            position: relative;
+        }
+        
+        .address .addrs-span {
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body class="hidden-sn  white-skin">
+
+    <!--Double navigation-->
+    <header>
+        <!-- Sidebar navigation -->
+        <div id="slide-out" class="side-nav mdb-sidenav">
+            <ul class="custom-scrollbar list-unstyled" style="max-height:100vh;">
+                <!-- Logo -->
+                <li>
+                    <div class="logo-wrapper waves-light">
+                        <a href="index.html"><img src="img/cardianexlogo.png" class="img-fluid flex-center"></a>
+                    </div>
+                </li>
+                <!--/. Logo -->
+                <!-- Side navigation links -->
+                <li><a href="index.html" class="waves-effect"><i class="fa fa-home pr-2"></i> Home</a>
+                </li>
+                <li><a href="patient-enrollment.html" class="waves-effect"><i class="fa fa-user pr-2"></i> Patient Enrollment</a>
+                </li>
+                <li><a href="upload-data.html" class="waves-effect"><i class="fa fa-upload pr-2"></i> Upload Data</a>
+                </li>
+                <li><a href="request-suppliers.html" class="waves-effect"><i class="fa fa-cart-plus pr-2"></i> Request Suppliers</a>
+                </li>
+                <li>
+                    <a href="managedevices.html" class="waves-effect"> <i class="flaticon-cardiogram-9 pr-2"></i> Manage Devices</a>
+                </li>
+                <!--/. Side navigation links -->
+            </ul>
+            <div class="sidenav-bg mask-strong"></div>
+        </div>
+        <!--/. Sidebar navigation -->
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+            <!-- SideNav slide-out button -->
+            <div class="float-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons md-light">menu</i></a>
+            </div>
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-dn mr-auto">
+                <a class="navbar-brand" href="index.html"><img class="logo" src="img/cardianexlogo.png" class=""></a>
+            </div>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="fa fa-phone"></i> <span class="clearfix d-none d-sm-inline-block">(888)-633-2689</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="fa fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">support@cardianex.com</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block">Live Chat</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#"><i class="fa fa-user-o" aria-hidden="true"></i> <span class="clearfix d-sm-inline-block">My Account</span></a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-undo" aria-hidden="true"></i> <span class="clearfix  d-sm-inline-block">Reset</span></a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-power-off" aria-hidden="true"></i> <span class="clearfix  d-sm-inline-block">Logout</span></a>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- /.Navbar -->
+
+
+
+    </header>
+    <!--/.Double navigation-->
+
+    <!--Main Layout-->
+    <main>
+        <!--container-fluid -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 py-2">
+                    <ol class="breadcrumb justify-content-end mb-0">
+                        <li class="breadcrumb-item"><a class="" href="group-management.html">Back to Group Management</a></li>
+
+                    </ol>
+                </div>
+                <div class="col-sm-12">
+                    <div class="card card-cascade narrower">
+
+                        <!--Card image-->
+                        <div class="view gradient-card-header narrower py-3 mx-0 mb-3 d-flex justify-content-between align-items-center" style="background-color:#114786 !important; box-shadow: none;">
+
+                            <div>
+                                User Details
+                            </div>
+
+                            <!-- <a href="" class="white-text mx-3">Table name</a> -->
+
+                            <div>
+                                <a class="pr-2" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                                <a class="pr-2" data-toggle="tooltip" data-placement="top" title="Print"><i class="fa fa-print" aria-hidden="true"></i></a>
+                                <a class="pr-2" data-toggle="tooltip" data-placement="top" title="Export Csv"><i class="fa fa-share-square" aria-hidden="true"></i></a>
+                                <a class=" dropdown-toggle btn-cog" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                </a>
+                                <div class="dropdown-menu" id="#dropdownMenu2" style="left:-5rem;">
+                                    <div class="mx-4">
+                                        <select class="mdb-select" multiple>
+                                        <option value="" disabled selected>Columns</option>
+                                        <option value="1">Name</option>
+                                        <option value="11">User Id</option>
+                                        <option value="2">Role</option>
+                                        <option value="3">Address</option>
+                                        <option value="1">Email</option>
+                                        <option value="2">Phone No</option>
+                                        <option value="3">Locations</option>
+                                        <option value="2">NPI Number</option>
+                                        <option value="3">E-Sign</option>
+                                        <option value="3">Date Created On</option>
+                                    </select>
+
+                                        <select class="mdb-select" multiple>
+                                        <option value="" disabled selected>Actions</option>
+                                        <option value="1">Edit User</option>
+                                        <option value="2">Connect Locations</option>
+                                        <option value="3"> Assign Admins</option>
+                                        <option value="1">Disable User</option>
+                                        <option value="2">Configure Alerts</option>
+
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/Card image-->
+                        </div>
+
+                        <!--Top Table UI-->
+                        <div class="table-ui p-2 mb-0 mx-4">
+
+                            <!--Grid row-->
+                            <div class="row justify-content-between">
+                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <select class="select-wrapper mdb-select colorful-select dropdown-primary">
+                                    <option value="" disabled selected>Role</option>
+                                    <option value="0">Admin</option>
+                                    <option value="3745">Doctor</option>
+                                    <option value="3745">Both</option>
+                                </select>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+
+                                    <select class="select-wrapper mdb-select colorful-select dropdown-primary">
+                                    <option value="" disabled selected>Filter</option>
+                                    <option value="20">All</option>
+                                    <option value="21">Active</option>
+                                    <option value="18">In-Active</option>                                  
+                                </select>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+
+                                    <form class="form-inline mt-2">
+                                        <div class="input-group md-form mt-2  form-1 pl-0">
+
+                                            <input class="form-control my-0 py-1" type="text" placeholder="Search by All" aria-label="Search">
+                                            <!-- <div class="input-group-prepend">
+                                            <span class="btn btn-sm btn-primary ml-0 px-2" id="basic-text1"><i class="fa fa-search text-white" aria-hidden="true"></i></span>
+
+                                        </div> -->
+                                        </div>
+
+                                    </form>
+
+                                </div>
+
+                                <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6 pr-0 text-right">
+                                    <div class="mt-2">
+                                        <a class="btn btn-sm btn-primary mr-2">Go</a>
+                                        <a class="btn btn-sm btn-primary mr-0" data-toggle="modal" data-target="#AdvanceSearch">Advance Search</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+                            <div class="row">
+                                <div class="col-sm-12 col-lg-12" style="padding-left:0; padding-right:0;">
+                                    <a class="btn btn-sm btn-primary mr-0" data-toggle="modal" data-target="#AddUser">Add User</a>
+                                    <a class="btn btn-sm btn-primary mr-0" data-toggle="modal" data-target="#EditUser">Import User</a>
+                                    <a class="btn btn-sm btn-primary mr-0" data-toggle="modal" data-target="#EditUser">Export User</a>
+                                    <a class="btn btn-sm btn-primary mr-0" data-toggle="modal" data-target="#EditUser">User History</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Top Table UI-->
+                        <!--Table -->
+
+                        <div class="table-responsive text-nowrap cardianex-table">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+
+
+                                        <th>Name<a href="#"><i class="fa fa-sort ml-1"></i></a></th>
+                                        <th>User Id<a href="#"><i class="fa fa-sort ml-1"></i></a></th>
+                                        <th> Role<a href="#"><i class="fa fa-sort ml-1"></i></a></th>
+                                        <th>Address <a href="#"><i class="fa fa-sort ml-1"></i></a></th>
+                                        <th>Email<a href="#"><i class="fa fa-sort ml-1"></i></a></th>
+                                        <th>Phone No<a href="#"><i class="fa fa-sort ml-1"></i></a></th>
+                                        <th>Locations<a href="#"><i class="fa fa-sort ml-1"></i></a></th>
+                                        <th>NPI Number<a href="#"><i class="fa fa-sort ml-1"></i></a></th>
+                                        <th>E-Sign<a href="#"><i class="fa fa-sort ml-1"></i></a></th>
+
+                                        <th class="pt-dob">Date Created On <a href="#"><i class="fa fa-sort ml-1"></i></a></th>
+
+                                        <th>Action </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ghanshyam,Patel</td>
+                                        <td> 12345</td>
+                                        <td> Both</td>
+                                        <td class="address">
+                                            <span class="addrs-span">
+                                            <span><small>1234 Main Street,</small></span><br/>
+                                            <span><small>Austin,TX,78727</small></span>
+                                            </span>
+                                        </td>
+                                        <td>gadsd_c@bellsouth.net</td>
+                                        <td>(256) 543-1770 </td>
+                                        <td>12</td>
+                                        <td>123456789</td>
+                                        <td>
+                                            <input type="checkbox" id="checkbox10">
+                                            <label for="checkbox10" class="label-table"></label>
+                                        </td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time"><small>10:06 AM</small></span> </span>
+                                        </td>
+                                        <td class="edit-icons">
+                                            <span data-toggle="modal" data-target="#EditUser"><i class="fa fa-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Edit User"></i></span>
+                                            <span><i class="fa fa-ban" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Disable User"></i></span>
+                                            <span class="dropdown">
+                                                <span class="dropdown-toggle" data-toggle="dropdown">
+                                                        <i class="fa fa-ellipsis-h" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="More"></i>
+                                                    </span>
+                                            <div class="dropdown-menu">
+
+
+                                                <a class="dropdown-item" href="add-location.html">
+                                                    <i class="fa fa-map-marker pr-2" aria-hidden="true"></i> Connect Locations
+                                                </a>
+
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#AddPrivileges">
+                                                    <i class="fa fa-user pr-2" aria-hidden="true"></i> Assign Admins
+                                                </a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#AddPrivileges">
+                                                    <i class="fa fa-bell-o pr-2" aria-hidden="true"></i>Configure Alerts
+                                                </a>
+                                            </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ghanshyam,Patel</td>
+                                        <td> 12345</td>
+                                        <td> Both</td>
+                                        <td class="address">
+                                            <span class="addrs-span">
+                                                <span><small>1234 Main Street,</small></span><br/>
+                                            <span><small>Austin,TX,78727</small></span>
+                                            </span>
+                                        </td>
+                                        <td>gadsd_c@bellsouth.net</td>
+                                        <td>(256) 543-1770 </td>
+                                        <td>12</td>
+                                        <td>123456789</td>
+                                        <td>
+                                            <input type="checkbox" id="checkbox110">
+                                            <label for="checkbox110" class="label-table"></label>
+                                        </td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time"><small>10:06 AM</small></span> </span>
+                                        </td>
+                                        <td class="edit-icons">
+                                            <span data-toggle="modal" data-target="#EditUser"><i class="fa fa-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Edit User"></i></span>
+                                            <span><i class="fa fa-ban" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Disable User"></i></span>
+                                            <span class="dropdown">
+                                                    <span class="dropdown-toggle" data-toggle="dropdown">
+                                                            <i class="fa fa-ellipsis-h" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="More"></i>
+                                                        </span>
+                                            <div class="dropdown-menu">
+
+
+                                                <a class="dropdown-item" href="add-location.html">
+                                                    <i class="fa fa-map-marker pr-2" aria-hidden="true"></i> Connect Locations
+                                                </a>
+
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#AddPrivileges">
+                                                    <i class="fa fa-user pr-2" aria-hidden="true"></i> Assign Admins
+                                                </a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#AddPrivileges">
+                                                    <i class="fa fa-bell-o pr-2" aria-hidden="true"></i>Configure Alerts
+                                                </a>
+                                            </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ghanshyam,Patel</td>
+                                        <td> 12345</td>
+                                        <td> Admin</td>
+                                        <td class="address">
+                                            <span class="addrs-span">
+                                                    <span><small>1234 Main Street,</small></span><br/>
+                                            <span><small>Austin,TX,78727</small></span>
+                                            </span>
+                                        </td>
+                                        <td>gadsd_c@bellsouth.net</td>
+                                        <td>(256) 543-1770 </td>
+                                        <td>12</td>
+                                        <td>123456789</td>
+                                        <td>
+                                            <input type="checkbox" id="checkbox101">
+                                            <label for="checkbox101" class="label-table"></label>
+                                        </td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time"><small>10:06 AM</small></span> </span>
+                                        </td>
+                                        <td class="edit-icons">
+                                            <span data-toggle="modal" data-target="#EditUser"><i class="fa fa-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Edit User"></i></span>
+                                            <span><i class="fa fa-ban" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Disable User"></i></span>
+                                            <span class="dropdown">
+                                                        <span class="dropdown-toggle" data-toggle="dropdown">
+                                                                <i class="fa fa-ellipsis-h" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="More"></i>
+                                                            </span>
+                                            <div class="dropdown-menu">
+
+
+                                                <a class="dropdown-item" href="add-location.html">
+                                                    <i class="fa fa-map-marker pr-2" aria-hidden="true"></i> Connect Locations
+                                                </a>
+
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#AddPrivileges">
+                                                    <i class="fa fa-user pr-2" aria-hidden="true"></i> Assign Admins
+                                                </a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#AddPrivileges">
+                                                    <i class="fa fa-bell-o pr-2" aria-hidden="true"></i>Configure Alerts
+                                                </a>
+                                            </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ghanshyam,Patel</td>
+                                        <td> 12345</td>
+                                        <td>Doctor</td>
+                                        <td class="address">
+                                            <span class="addrs-span">
+                                                        <span><small>1234 Main Street,</small></span><br/>
+                                            <span><small>Austin,TX,78727</small></span>
+                                            </span>
+                                        </td>
+                                        <td>gadsd_c@bellsouth.net</td>
+                                        <td>(256) 543-1770 </td>
+                                        <td>12</td>
+                                        <td>123456789</td>
+                                        <td>
+                                            <input type="checkbox" id="checkbox102">
+                                            <label for="checkbox102" class="label-table"></label>
+                                        </td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time"><small>10:06 AM</small></span> </span>
+                                        </td>
+                                        <td class="edit-icons">
+                                            <span data-toggle="modal" data-target="#EditUser"><i class="fa fa-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Edit User"></i></span>
+                                            <span><i class="fa fa-ban" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Disable User"></i></span>
+                                            <span class="dropdown">
+                                                            <span class="dropdown-toggle" data-toggle="dropdown">
+                                                                    <i class="fa fa-ellipsis-h" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="More"></i>
+                                                                </span>
+                                            <div class="dropdown-menu">
+
+
+                                                <a class="dropdown-item" href="add-location.html">
+                                                    <i class="fa fa-map-marker pr-2" aria-hidden="true"></i> Connect Locations
+                                                </a>
+
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#AddPrivileges">
+                                                    <i class="fa fa-user pr-2" aria-hidden="true"></i> Assign Admins
+                                                </a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#AddPrivileges">
+                                                    <i class="fa fa-bell-o pr-2" aria-hidden="true"></i>Configure Alerts
+                                                </a>
+                                            </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ghanshyam,Patel</td>
+                                        <td> 12345</td>
+                                        <td> Doctor</td>
+                                        <td class="address">
+                                            <span class="addrs-span">
+                                                            <span><small>1234 Main Street,</small></span><br/>
+                                            <span><small>Austin,TX,78727</small></span>
+                                            </span>
+                                        </td>
+                                        <td>gadsd_c@bellsouth.net</td>
+                                        <td>(256) 543-1770 </td>
+                                        <td>12</td>
+                                        <td>123456789</td>
+                                        <td>
+                                            <input type="checkbox" id="checkbox103">
+                                            <label for="checkbox103" class="label-table"></label>
+                                        </td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time"><small>10:06 AM</small></span> </span>
+                                        </td>
+                                        <td class="edit-icons">
+                                            <span data-toggle="modal" data-target="#EditUser"><i class="fa fa-pencil" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Edit User"></i></span>
+                                            <span><i class="fa fa-ban" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Disable User"></i></span>
+                                            <span class="dropdown">
+                                                                <span class="dropdown-toggle" data-toggle="dropdown">
+                                                                        <i class="fa fa-ellipsis-h" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="More"></i>
+                                                                    </span>
+                                            <div class="dropdown-menu">
+
+
+                                                <a class="dropdown-item" href="add-location.html">
+                                                    <i class="fa fa-map-marker pr-2" aria-hidden="true"></i> Connect Locations
+                                                </a>
+
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#AddPrivileges">
+                                                    <i class="fa fa-user pr-2" aria-hidden="true"></i> Assign Admins
+                                                </a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#AddPrivileges">
+                                                    <i class="fa fa-bell-o pr-2" aria-hidden="true"></i>Configure Alerts
+                                                </a>
+                                            </div>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!--Bottom Table UI-->
+                        <div class="row  justify-content-between">
+
+                            <div class="col-xl-3 col-lg-3  col-sm-6">
+                                <select class="mdb-select colorful-select dropdown-primary hidden-md-down mx-2">
+                                <option value=" " disabled>Rows number</option>
+                                <option value="1 " selected>5 rows</option>
+                                <option value="2 ">25 rows</option>
+                                <option value="3 ">50 rows</option>
+                                <option value="4 ">100 rows</option>
+                            </select>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-sm-6">
+                                <!--Pagination -->
+                                <nav class="mt-3">
+                                    <ul class="pagination pagination-circle pg-blue mb-0 ">
+
+
+                                        <li class="page-item disabled clearfix d-none d-md-block "><a class="page-link ">First</a></li>
+
+
+                                        <li class="page-item disabled ">
+                                            <a class="page-link " aria-label="Previous ">
+                                                <span aria-hidden="true ">&laquo;</span>
+                                                <span class="sr-only ">Previous</span>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="page-item active "><a class="page-link ">1</a></li>
+                                        <li class="page-item "><a class="page-link ">2</a></li>
+                                        <li class="page-item "><a class="page-link ">3</a></li>
+                                        <li class="page-item "><a class="page-link ">4</a></li>
+                                        <li class="page-item "><a class="page-link ">5</a></li>
+
+
+                                        <li class="page-item ">
+                                            <a class="page-link " aria-label="Next ">
+                                                <span aria-hidden="true ">&raquo;</span>
+                                                <span class="sr-only ">Next</span>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="page-item clearfix d-none d-md-block"><a class="page-link ">Last</a></li>
+
+                                    </ul>
+                                </nav>
+                                <!--/Pagination -->
+                            </div>
+                            <div class="col-xl-2 col-lg-2 col-sm-6">
+                                <div class="md-form input-group mt-1 mb-0">
+                                    <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Go to page">
+                                    <div class="input-group-append">
+                                        <span class="btn btn-sm btn-primary">Go</span>
+                                    </div>
+                                </div>
+                                <!--Bottom Table UI-->
+
+                                <!--Table -->
+
+                            </div>
+                        </div>
+                        </section>
+                        <!---table-->
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--container-fluid -->
+    </main>
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only pt-0 mt-5" style="background-color:#fff; border: 1px solid #ddd;     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+
+
+        <div class="footer-copyright" style="background-color:#fff;">
+            <div class="container-fluid text-center">
+                <!-- <p class="mt-2 mb-2"> &copy; 2017 Copyright: <a href="https://www.cardianex.com/"> cardianex.com </a></p> -->
+                <div class="row justify-content-center">
+                    <div class="media">
+
+                        <div class="media-body">
+                            <h5 class="mt-3">Powered By</h5>
+
+                        </div>
+                        <img src="img/cardianexlogo.png" class="img-fluid  footer-logo">
+                    </div>
+                    <!-- <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4  text-center">
+                        <h5 class="mt-2 mb-0 grey-text">Powered By</h5>
+                        <img src="img/cardianexlogo.png" class="img-fluid  footer-logo">
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+
+
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- popperjs -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script>
+        // SideNav Initialization
+        $(".button-collapse").sideNav();
+
+        // Tooltips Initialization
+        $(function() {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+            // Material Select Initialization
+        $(document).ready(function() {
+            $('.mdb-select').material_select();
+            $('.datepicker').pickadate();
+            $('#filter').click(function() {
+                $('#searcharea').toggle();
+
+            });
+            $('#collate').click(function() {
+                $('#searcharea-physcn').toggle();
+
+            });
+        });
+        // Data Picker Initialization
+    </script>
+
+</body>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="AddUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header  text-center">
+                <h4 class="modal-title w-100 font-bold">Add User</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Name <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">User Id <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Password <span class="required">*</span></label>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Grid row -->
+
+
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Role<span class="required">*</span></option>
+                                <option value="Doctor">Doctor</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Both">Both</option>
+
+
+                            </select>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Salutation<span class="required">*</span></option>
+                                <option value="Mr">Mr</option>
+                                <option value="Ms">Ms</option>
+                                
+
+
+                            </select>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">First Name <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Last Name <span class="required">*</span></label>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+
+                    <!-- Grid column -->
+
+
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="lN1" class="form-control">
+                                <label for="lN1">Middle Name </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="mN1" class="form-control">
+                                <label for="mN1">Degree </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="md-form">
+                            <input type="text" id="st2" class="form-control">
+                            <label for="st2">
+                                                    Address </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="st1" class="form-control">
+                            <label for="st1">City <span class="required">*</span></label>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="st2" class="form-control">
+                            <label for="st2">State <span class="required">*</span></label>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="st2" class="form-control">
+                            <label for="st2">Zip <span class="required">*</span></label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class=""> Phone</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class="">Fax</label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="fN1" class="form-control">
+                                <label for="fN1" class="">Email <span class="required">*</span></label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+
+                <div class="row">
+
+
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class="">Reference</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class="">NPI Number <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <!-- Material unchecked -->
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                                <label class="form-check-label" for="materialUnchecked">Can E-Sign</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-global">Save</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="EditUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header  text-center">
+                <h4 class="modal-title w-100 font-bold">Edit User</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Name <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">User Id <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Password <span class="required">*</span></label>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Grid row -->
+
+
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                    <option value="" disabled selected>Role<span class="required">*</span></option>
+                                    <option value="Doctor">Doctor</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Both">Both</option>
+    
+    
+                                </select>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                    <option value="" disabled selected>Salutation<span class="required">*</span></option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Ms">Ms</option>
+                                    
+    
+    
+                                </select>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">First Name <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Last Name <span class="required">*</span></label>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+
+                    <!-- Grid column -->
+
+
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="lN1" class="form-control">
+                                <label for="lN1">Middle Name </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="mN1" class="form-control">
+                                <label for="mN1">Degree </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="md-form">
+                            <input type="text" id="st2" class="form-control">
+                            <label for="st2">
+                                                        Address </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="st1" class="form-control">
+                            <label for="st1">City <span class="required">*</span></label>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="st2" class="form-control">
+                            <label for="st2">State <span class="required">*</span></label>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="st2" class="form-control">
+                            <label for="st2">Zip <span class="required">*</span></label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class=""> Phone</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class="">Fax</label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="fN1" class="form-control">
+                                <label for="fN1" class="">Email <span class="required">*</span></label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+
+                <div class="row">
+
+
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class="">Reference</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class="">NPI Number <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <!-- Material unchecked -->
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                                <label class="form-check-label" for="materialUnchecked">Can E-Sign</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-global">Save</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="AdvanceSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header  text-center">
+                <h4 class="modal-title w-100 font-bold">Advance Search</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Name <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">User Id <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Password <span class="required">*</span></label>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Grid row -->
+
+
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                    <option value="" disabled selected>Role<span class="required">*</span></option>
+                                    <option value="Doctor">Doctor</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Both">Both</option>
+    
+    
+                                </select>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                    <option value="" disabled selected>Salutation<span class="required">*</span></option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Ms">Ms</option>
+                                    
+    
+    
+                                </select>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">First Name <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Last Name <span class="required">*</span></label>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+
+                    <!-- Grid column -->
+
+
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="lN1" class="form-control">
+                                <label for="lN1">Middle Name </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="mN1" class="form-control">
+                                <label for="mN1">Degree </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="md-form">
+                            <input type="text" id="st2" class="form-control">
+                            <label for="st2">
+                                                        Address </label>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="st1" class="form-control">
+                            <label for="st1">City <span class="required">*</span></label>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="st2" class="form-control">
+                            <label for="st2">State <span class="required">*</span></label>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="st2" class="form-control">
+                            <label for="st2">Zip <span class="required">*</span></label>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class=""> Phone</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class="">Fax</label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="fN1" class="form-control">
+                                <label for="fN1" class="">Email <span class="required">*</span></label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+
+                <div class="row">
+
+
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class="">Reference</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1" class="">NPI Number <span class="required">*</span></label>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                        <!-- Material input -->
+                        <div class="md-form">
+                            <!-- Material input -->
+                            <!-- Material unchecked -->
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                                <label class="form-check-label" for="materialUnchecked">Can E-Sign</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-global">Search</button>
+                <button type="button" class="btn btn-primary">Clear</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</html>

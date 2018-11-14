@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cardianex</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="font/flat-icon/flaticon.css" rel="stylesheet">
+    <!-- Google icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        main {
+            padding-top: 0 !important;
+        }
+        
+        .ml-aecg {
+            margin-left: 4.6rem;
+        }
+        
+        .request-table .table th,
+        .request-table .table td {
+            color: #000;
+            font-weight: 500;
+        }
+        
+        .records p {
+            font-size: 0.9rem;
+        }
+        
+        .request-table .table-responsive {
+            border: 1px solid #ddd;
+            height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body class="hidden-sn  white-skin">
+
+    <!--Double navigation-->
+    <header>
+        <!-- Sidebar navigation -->
+        <div id="slide-out" class="side-nav mdb-sidenav">
+            <ul class="custom-scrollbar list-unstyled" style="max-height:100vh;">
+                <!-- Logo -->
+                <li>
+                    <div class="logo-wrapper waves-light">
+                        <a href="index.html"><img src="img/cardianexlogo.png" class="img-fluid flex-center"></a>
+                    </div>
+                </li>
+                <!--/. Logo -->
+                <!-- Side navigation links -->
+                <li><a href="index.html" class="waves-effect"><i class="fa fa-home pr-2"></i> Home</a>
+                </li>
+                <li><a href="patient-enrollment.html" class="waves-effect"><i class="fa fa-user pr-2"></i> Patient Enrollment</a>
+                </li>
+                <li><a href="upload-data.html" class="waves-effect"><i class="fa fa-upload pr-2"></i> Upload Data</a>
+                </li>
+                <li><a href="request-suppliers.html" class="waves-effect"><i class="fa fa-cart-plus pr-2"></i> Request Suppliers</a>
+                </li>
+                <li><a href="managedevices.html" class="waves-effect"><i class="flaticon-cardiogram-9 pr-2"></i> Manage Devices</a>
+                </li>
+                <!--/. Side navigation links -->
+            </ul>
+            <div class="sidenav-bg mask-strong"></div>
+        </div>
+        <!--/. Sidebar navigation -->
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+            <!-- SideNav slide-out button -->
+            <div class="float-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons md-light">menu</i></a>
+            </div>
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-dn mr-auto">
+                <a class="navbar-brand" href="index.html"><img class="logo" src="img/cardianexlogo.png" class=""></a>
+            </div>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="fa fa-phone"></i> <span class="clearfix d-none d-sm-inline-block">(888)-633-2689</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="fa fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">support@cardianex.com</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block">Live Chat</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#"><i class="fa fa-user-o" aria-hidden="true"></i> <span class="clearfix d-sm-inline-block">My Account</span></a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-power-off" aria-hidden="true"></i> <span class="clearfix  d-sm-inline-block">Logout</span></a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.Navbar -->
+
+        <!-- Fixed button --
+        <div class="fixed-action-btn clearfix d-none d-xl-block" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-global">
+                <i class="fa fa-pencil"></i>
+            </a>
+
+            <ul class="list-unstyled">
+                <li><a class="btn-floating blue" href="index.html" data-toggle="tooltip" data-placement="left" title="Home"><i class="fa fa-home"></i></a></li>
+                <li><a class="btn-floating blue" href="patinetenrollment.html" data-toggle="tooltip" data-placement="left" title="Patient Enrollment"><i class="fa fa-user"></i></a></li>
+                <li><a class="btn-floating blue" href="uploaddat.html" data-toggle="tooltip" data-placement="left" title="Upload Data"><i class="fa fa-upload"></i></a></li>
+                <li><a class="btn-floating blue" href="requestsuppliers.html" data-toggle="tooltip" data-placement="left" title="Request Suppliers"><i class="fa fa-heartbeat "></i></a></li>
+            </ul>
+        </div>
+        <!-- Fixed button -->
+        <!--Custom-icon Side navbar-->
+
+        <!-- <a id="slide-open"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a> -->
+
+        <div class="list-group list-group-cstm icon-bar d-none d-md-none d-lg-none d-xl-block">
+            <a class="nav-link list-group-item" href="index.html"><i class="fa fa-home"></i></a>
+            <a class="nav-link list-group-item" href="patient-enrollment.html">
+                <i class="fa fa-user"></i>
+            </a>
+            <a class="nav-link list-group-item" href="upload-data.html">
+                <i class="fa fa-upload"></i>
+            </a>
+            <a href="request-suppliers.html" class="nav-link list-group-item  active">
+                <i class="fa fa-cart-plus"></i>
+            </a>
+            <a href="managedevices.html" class="nav-link list-group-item">
+                <i class="flaticon-cardiogram-9"></i>
+            </a>
+            <!-- <a href="#" class="nav-link list-group-item" id="slide-return">
+                <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+            </a> -->
+
+        </div>
+
+        <!--Custom-icon Side navbar-->
+    </header>
+    <!--/.Double navigation-->
+
+    <!--Main Layout-->
+    <main>
+        <!--container-fluid -->
+        <div class="container-fluid">
+
+            <!---table-->
+            <section class="request-table">
+
+                <div class="mt-5 card card-cascade narrower">
+
+                    <!--Card image-->
+                    <div class="view gradient-card-header narrower py-3 mx-0 mb-3 d-flex justify-content-between align-items-center" style="background-color:#114786 !important; box-shadow: none;">
+
+                        <div>
+                            Request Suppliers
+                        </div>
+
+                    </div>
+
+                    <div class="row justify-content-md-center">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>S.No</th>
+                                            <th> Supplies</th>
+                                            <th>
+                                                Quantity
+                                            </th>
+
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Holter – 7 Lead kits</td>
+                                            <td>
+                                                <!-- Material input -->
+                                                <div class="md-form mt-0">
+                                                    <input type="text" id="form1" class="form-control p-0 m-0 p-0 m-0">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Holter – 4 Lead kits</td>
+                                            <td>
+                                                <!-- Material input -->
+                                                <div class="md-form mt-0">
+                                                    <input type="text" id="form1" class="form-control p-0 m-0">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Holter – 7 Lead kits</td>
+                                            <td>
+                                                <!-- Material input -->
+                                                <div class="md-form mt-0">
+                                                    <input type="text" id="form1" class="form-control p-0 m-0">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Holter – 3 Lead kits</td>
+                                            <td>
+                                                <!-- Material input -->
+                                                <div class="md-form mt-0">
+                                                    <input type="text" id="form1" class="form-control p-0 m-0">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Holter – 7 Lead kits</td>
+                                            <td>
+                                                <!-- Material input -->
+                                                <div class="md-form mt-0">
+                                                    <input type="text" id="form1" class="form-control p-0 m-0">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Holter – 7 Lead kits</td>
+                                            <td>
+                                                <!-- Material input -->
+                                                <div class="md-form mt-0">
+                                                    <input type="text" id="form1" class="form-control p-0 m-0">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>Holter – 7 Lead kits</td>
+                                            <td>
+                                                <!-- Material input -->
+                                                <div class="md-form mt-0">
+                                                    <input type="text" id="form1" class="form-control p-0 m-0">
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 mt-5">
+                                    <label for="exampleFormControlTextarea2">Ship to Address</label>
+                                </div>
+
+                                <!-- Grid column -->
+                                <div class="col-sm-12  col-lg-6 col-xl-6">
+                                    <!-- Material input -->
+                                    <div class="md-form">
+                                        <input type="text" id="st1" class="form-control">
+                                        <label for="st1" class="">Street Address1 <span class="required">*</span></label>
+
+                                    </div>
+                                </div>
+                                <!-- Grid column -->
+
+                                <div class="col-sm-12  col-lg-6 col-xl-6">
+                                    <!-- Material input -->
+                                    <div class="md-form">
+                                        <input type="text" id="st2" class="form-control">
+                                        <label for="st2">Street Address2 <span class="required">*</span></label>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+
+                                <!-- Grid column -->
+                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                    <!-- Material input -->
+                                    <div class="md-form">
+                                        <input type="text" id="st1" class="form-control">
+                                        <label for="st1" class="">City <span class="required">*</span></label>
+
+                                    </div>
+                                </div>
+                                <!-- Grid column -->
+
+                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                    <!-- Material input -->
+                                    <div class="md-form">
+                                        <input type="text" id="st2" class="form-control">
+                                        <label for="st2">State <span class="required">*</span></label>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                    <!-- Material input -->
+                                    <div class="md-form">
+                                        <input type="text" id="st2" class="form-control">
+                                        <label for="st2">Zip <span class="required">*</span></label>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6 col-sm-12 col-lg-6  mt-4">
+                                    <div class="form-check pl-0">
+                                        <input type="checkbox" class="form-check-input" id="materialInline2">
+                                        <label class="form-check-label" for="materialInline2">Remember Address</label>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-xl-6 col-lg-6 col-sm-12">
+                                    <label class="form-check-label" for="materialInline1">Send Confirmation Email Copy to</label>
+                                    <!-- Material input --
+                                    <div class="md-form mt-0">
+
+                                        <input type="text" id="st22" class="form-control">
+                                        <label for="st22">Email </label>
+
+                                    </div>
+
+
+                                </div> -->
+                                <div class="form-group row pl-3 mt-2">
+                                    <!-- Material input -->
+                                    <label for="inputEmail3MD" class="col-lg-7 col-form-label">Send Confirmation Email Copy to</label>
+                                    <div class="col-lg-5">
+                                        <div class="md-form mt-0">
+                                            <input type="email" class="form-control" id="inputEmail3MD" placeholder="Email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group pl-0 mt-3">
+                                    <a class="btn btn-primary">Order</a>
+                                    <a class="btn btn-primary">Cancel</a>
+                                </div>
+                            </div>
+                            <!-- Material inline 2 -->
+                        </div>
+                        <!-- Material inline 1 -->
+
+
+
+
+                    </div>
+
+                </div>
+
+        </div>
+        </section>
+        <!---table-->
+
+        </div>
+        <!--container-fluid -->
+    </main>
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only pt-0 mt-5" style="background-color:#fff; border: 1px solid #ddd;     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+
+
+        <div class="footer-copyright" style="background-color:#fff;">
+            <div class="container-fluid text-center">
+                <!-- <p class="mt-2 mb-2"> &copy; 2017 Copyright: <a href="https://www.cardianex.com/"> cardianex.com </a></p> -->
+                <div class="row justify-content-center">
+                    <div class="media">
+
+                        <div class="media-body">
+                            <h5 class="mt-3">Powered By</h5>
+
+                        </div>
+                        <img src="img/cardianexlogo.png" class="img-fluid  footer-logo">
+                    </div>
+                    <!-- <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4  text-center">
+                        <h5 class="mt-2 mb-0 grey-text">Powered By</h5>
+                        <img src="img/cardianexlogo.png" class="img-fluid  footer-logo">
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+
+
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- popperjs -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script>
+        // SideNav Initialization
+        $(".button-collapse").sideNav();
+
+        // Tooltips Initialization
+        $(function() {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+            // Material Select Initialization
+        $(document).ready(function() {
+            $('.mdb-select').material_select();
+            $('.datepicker').pickadate();
+            $('#filter').click(function() {
+                $('#searcharea').toggle();
+
+            });
+            $('#collate').click(function() {
+                $('#searcharea-physcn').toggle();
+
+            });
+        });
+        // Data Picker Initialization
+    </script>
+
+
+</body>
+
+
+</html>

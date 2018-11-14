@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cardianex</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="font/flat-icon/flaticon.css" rel="stylesheet">
+    <!-- Google icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            position: relative;
+        }
+        
+        .fixed-sn main,
+        .hidden-sn main {
+            padding-top: 0;
+        }
+        
+        [type=checkbox]+label,
+        [type=radio]+label {
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+            display: inline-block;
+            height: 25px;
+            line-height: 20px;
+            font-size: 1rem;
+        }
+        
+        .md-form input[type=date],
+        .md-form input[type=datetime-local],
+        .md-form input[type=email],
+        .md-form input[type=number],
+        .md-form input[type=password],
+        .md-form input[type=search-md],
+        .md-form input[type=search],
+        .md-form input[type=tel],
+        .md-form input[type=text],
+        .md-form input[type=time],
+        .md-form input[type=url],
+        .md-form textarea.md-textarea,
+        .datepicker,
+        .timepicker {
+            color: #000 !important;
+        }
+        
+        .datepicker::-webkit-input-placeholder,
+        .timepicker::-webkit-input-placeholder {
+            /* WebKit, Blink, Edge */
+            color: #000 !important;
+        }
+        
+        .datepicker:-moz-placeholder,
+        .timepicker:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #000 !important;
+            opacity: 1;
+        }
+        
+        .datepicker::-moz-placeholder,
+        .timepicker::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #000 !important;
+            opacity: 1;
+        }
+        
+        .datepicker:-ms-input-placeholder,
+        .timepicker:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #000 !important;
+        }
+        
+        section {
+            padding-top: 60px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        Patient-Demographics {
+            padding-bottom: 0;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        .affix {
+            position: fixed;
+            top: 5.4rem;
+            width: 200px;
+            font-size: .8rem;
+            font-weight: 500;
+            color: #000;
+            right: 3.5rem;
+        }
+        /* #Study-Settings .nav-link { padding: .5rem 1rem; font-size: 0.8rem; color: #000; } */
+        
+        .md-form .form-control {
+            /* margin: 0 0 .5rem; */
+            border-radius: 0;
+            padding: .3rem 0 .55rem;
+            background-image: none;
+            background-color: transparent;
+            margin-top: 2.1rem;
+        }
+        
+        .patinet-enrollment h3 {
+            color: #114786;
+        }
+        
+        .ml-negative {
+            margin-left: -15px;
+        }
+    </style>
+</head>
+
+<body class="hidden-sn  white-skin" data-spy="scroll" data-target=".scrollspy">
+
+    <!--Double navigation-->
+    <header>
+        <!-- Sidebar navigation -->
+        <div id="slide-out" class="side-nav mdb-sidenav">
+            <ul class="custom-scrollbar list-unstyled" style="max-height:100vh;">
+                <!-- Logo -->
+                <li>
+                    <div class="logo-wrapper waves-light">
+                        <a href="index.html"><img src="img/cardianexlogo.png" class="img-fluid flex-center"></a>
+                    </div>
+                </li>
+                <!--/. Logo -->
+                <!-- Side navigation links -->
+                <li><a href="index.html" class="waves-effect"><i class="fa fa-home pr-2"></i> Home</a>
+                </li>
+                <li><a href="patient-enrollment.html" class="waves-effect"><i class="fa fa-user pr-2"></i> Patient Enrollment</a>
+                </li>
+                <li><a href="upload-data.html" class="waves-effect"><i class="fa fa-upload pr-2"></i> Upload Data</a>
+                </li>
+                <li><a href="request-suppliers.html" class="waves-effect"><i class="fa fa-cart-plus pr-2"></i> Request Suppliers</a>
+                </li>
+                <li><a href="managedevices.html" class="waves-effect"><i class="flaticon-cardiogram-9 pr-2"></i> Manage Devices</a>
+                </li>
+                <!--/. Side navigation links -->
+            </ul>
+            <div class="sidenav-bg mask-strong"></div>
+        </div>
+        <!--/. Sidebar navigation -->
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+            <!-- SideNav slide-out button -->
+            <div class="float-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons md-light">menu</i></a>
+            </div>
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-dn mr-auto">
+                <a class="navbar-brand" href="index.html"><img class="logo" src="img/cardianexlogo.png" class=""></a>
+            </div>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="fa fa-phone"></i> <span class="clearfix d-none d-sm-inline-block">(888)-633-2689</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="fa fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">support@cardianex.com</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block">Live Chat</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Profile
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#"><i class="fa fa-user-o" aria-hidden="true"></i> <span class="clearfix d-sm-inline-block">My Account</span></a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-power-off" aria-hidden="true"></i> <span class="clearfix  d-sm-inline-block">Logout</span></a>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- /.Navbar -->
+
+        <!-- Fixed button --
+        <div class="fixed-action-btn clearfix d-none d-xl-block" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-global">
+                <i class="fa fa-pencil"></i>
+            </a>
+
+            <ul class="list-unstyled">
+                <li><a class="btn-floating blue" href="index.html" data-toggle="tooltip" data-placement="left" title="Home"><i class="fa fa-home"></i></a></li>
+                <li><a class="btn-floating blue" href="patinetenrollment.html" data-toggle="tooltip" data-placement="left" title="Patient Enrollment"><i class="fa fa-user"></i></a></li>
+                <li><a class="btn-floating blue" href="uploaddat.html" data-toggle="tooltip" data-placement="left" title="Upload Data"><i class="fa fa-upload"></i></a></li>
+                <li><a class="btn-floating blue" href="requestsuppliers.html" data-toggle="tooltip" data-placement="left" title="Request Suppliers"><i class="fa fa-heartbeat "></i></a></li>
+            </ul>
+        </div>
+        <!-- Fixed button -->
+        <!--Custom-icon Side navbar-->
+
+        <!-- <a id="slide-open"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a> -->
+
+        <div class="list-group list-group-cstm icon-bar d-none d-md-none d-lg-none d-xl-block">
+            <a class="nav-link list-group-item" href="index.html"><i class="fa fa-home"></i></a>
+            <a class="nav-link list-group-item  active" href="patient-enrollment.html">
+                <i class="fa fa-user"></i>
+            </a>
+            <a class="nav-link list-group-item" href="upload-data.html">
+                <i class="fa fa-upload"></i>
+            </a>
+            <a href="request-suppliers.html" class="nav-link list-group-item">
+                <i class="fa fa-cart-plus"></i>
+            </a>
+            <a href="managedevices.html" class="nav-link list-group-item">
+                <i class="flaticon-cardiogram-9"></i>
+            </a>
+            <!-- <a href="#" class="nav-link list-group-item" id="slide-return">
+                <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+            </a> -->
+
+        </div>
+
+        <!--Custom-icon Side navbar-->
+    </header>
+    <!--/.Double navigation-->
+
+    <!--Main Layout-->
+    <main>
+        <!--container-fluid -->
+        <div class="container-fluid">
+
+            <div class="row mt-3">
+                <!-- <div class="col-sm-12 py-2">
+                    <ol class="breadcrumb justify-content-end mb-0">
+                        <li class="breadcrumb-item"><a class="btn btn-primary btn-sm" href="edit-exsisting-patient.html">Edit Exsisting Patient</a></li>
+
+                    </ol>
+                </div> -->
+
+
+
+
+
+                <div class="col-xl-10 col-lg-9 col-md-12 col-sm-12">
+                    <div class="card card-cascade narrower">
+
+                        <!--Card image-->
+                        <div class="view gradient-card-header narrower mr-0 ml-0 py-3 mx-0  d-flex justify-content-between align-items-center" style="background-color:#114786 !important; box-shadow: none;">
+
+                            <div>
+                                Patient Enrollment
+                            </div>
+
+                            <div>
+                                <a class="pr-2" data-toggle="tooltip" data-placement="top" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                                <a class="pr-2" data-toggle="tooltip" data-placement="top" title="Print"><i class="fa fa-print" aria-hidden="true"></i></a>
+                                <a class="pr-2" data-toggle="tooltip" data-placement="top" title="Export Csv"><i class="fa fa-share-square" aria-hidden="true"></i></a>
+                                <a class="text-white" href="edit-exsisting-patient.html">Edit Exsisting Patient</a>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <section id="Physician-Information">
+                                <form>
+                                    <!-- Grid row -->
+                                    <h5 class=""><i class="fa fa-user-md pr-3" aria-hidden="true"></i> Physician Information</h5>
+
+                                    <div class="row">
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <select class="mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Ordering Physican <span class="required">*</span></option>
+                                                    <option value="3745">Campanelli, Paul</option>
+                                                    <option value="3613">Doctor1, Demo</option>
+                                                    <option value="3614">Doctor2, Demo</option>
+                                                    <option value="3639">Doctor2, GMedical</option>
+                                                    <option value="3795">Garner, Joseph</option>
+                                                    <option value="3638">Gmedical, Doctor</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <select class="mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Location <span class="required">*</span></option>
+                                                    <option value="18">Test Location1</option>
+                                                    <option value="20">Austin</option>
+                                                    <option value="21">Bannockburn</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="ml-negative">
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input" id="materialUnchecked">
+                                                    <label class="form-check-label mt-0 pt-0" for="materialUnchecked">Remember My Location</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <select class="mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Reading Physican <span class="required">*</span></option>
+                                                    <option value="3745">Campanelli, Paul</option>
+                                                    <option value="3613">Doctor1, Demo</option>
+                                                    <option value="3614">Doctor2, Demo</option>
+                                                    <option value="3639">Doctor2, GMedical</option>
+                                                    <option value="3795">Garner, Joseph</option>
+                                                    <option value="3638">Gmedical, Doctor</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- Grid row -->
+                                </form>
+                            </section>
+                            <!--end of #web-design-->
+
+                            <section id="Study-Settings">
+                                <form>
+                                    <!-- Grid row -->
+
+                                    <h5 class=""> <i class="fa fa-cog pr-3" aria-hidden="true"></i>Study Settings</h5>
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <select class="mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Select Make and Model <span class="required">*</span></option>
+                                                    <option value="1563">DMS Service:myPatch-sl:0C52FD8F</option>
+                                                    <option value="1913">DMS Service:myPatch-sl:17E195DD</option>
+                                                    <option value="3548">DMS Service:myPatch-sl:1E42F18B</option>
+                                                    <option value="1454">DMS Service:myPatch-sl:21EA4803</option>
+                                                    <option value="1906">DMS Service:myPatch-sl:341742FB</option>
+                                                    <option value="2322">DMS Service:myPatch-sl:3E915727</option>
+                                                    <option value="1379">DMS Service:myPatch-sl:4157C33E</option>
+                                                    <option value="1349">DMS Service:myPatch-sl:41622EAB</option>
+                                                    <option value="1329">DMS Service:myPatch-sl:4343L</option>
+                                                    <option value="1915">DMS Service:myPatch-sl:45E3B26E</option>
+                                                    <option value="1587">DMS Service:myPatch-sl:46A12038</option>
+                                                    <option value="1658">DMS Service:myPatch-sl:54F5E530</option>
+                                                    <option value="1912">DMS Service:myPatch-sl:55ADBA1E</option>
+                                                    <option value="1551">DMS Service:myPatch-sl:564BFD04</option>
+                                                    <option value="1936">DMS Service:myPatch-sl:5E50D80E</option>
+                                                    <option value="1937">DMS Service:myPatch-sl:6005BA5C</option>
+                                                    <option value="1334">DMS Service:myPatch-sl:61B23432</option>
+                                                    <option value="1362">DMS Service:myPatch-sl:659F48CC</option>
+                                                    <option value="1659">DMS Service:myPatch-sl:66D70052</option>
+                                                    <option value="1908">DMS Service:myPatch-sl:70DECC85</option>
+                                                    <option value="2095">DMS Service:myPatch-sl:77282F83</option>
+                                                    <option value="2364">DMS Service:myPatch-sl:793512D8</option>
+                                                    <option value="1917">DMS Service:myPatch-sl:82E6FC13</option>
+                                                    <option value="1910">DMS Service:myPatch-sl:88BE936A</option>
+                                                    <option value="1350">DMS Service:myPatch-sl:9239CCBA</option>
+                                                    <option value="1931">DMS Service:myPatch-sl:9A7A9916</option>
+                                                    <option value="1518">DMS Service:myPatch-sl:ACEF1536</option>
+                                                    <option value="1517">DMS Service:myPatch-sl:B47C1914 </option>
+                                                    <option value="1386">DMS Service:myPatch-sl:BEE0B88A</option>
+                                                    <option value="1450">DMS Service:myPatch-sl:C1A1D13D</option>
+                                                    <option value="1909">DMS Service:myPatch-sl:C7C94C4D</option>
+                                                    <option value="1449">DMS Service:myPatch-sl:D50484EB</option>
+                                                    <option value="1568">DMS Service:myPatch-sl:EDE99FE6</option>
+                                                    <option value="1451">DMS Service:myPatch-sl:FFC96B8D</option>
+                                                    <option value="2921">TZ Medical:Clarus 40 M:H3R3300034</option>
+                                                    <option value="3549">TZ Medical:Clarus 40 M:H3R3300128</option>
+                                                    <option value="2557">TZ Medical:Clarus 40 M:H3R3300240</option>
+                                                    <option value="2531">TZ Medical:Clarus 40 M:H3R3300277</option>
+                                                    <option value="3171">TZ Medical:Clarus 40 M:H3R3300730</option>
+                                                    <option value="3172">TZ Medical:Clarus 40 M:H3R3300742</option>
+                                                    <option value="3609">TZ Medical:Clarus 40 M:H3R33444</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="mN1" class="form-control">
+                                                <label for="mN1">Enter Serial Number</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <p>Select From Most Frequently Conducted Studies</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-12  col-lg-12 col-xl-12 mb-3">
+                                            <div style="border: 1px solid #ddd;">
+                                                <ul class="nav">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" href="#!">MCT-3 Lead (14 Days)</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#!">MCT-3 Lead (14 Days)</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#!">MCT-3 Lead (14 Days)</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#!">MCT-3 Lead (14 Days</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" href="#!">MCT-3 Lead (14 Days)</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#!">MCT-3 Lead (14 Days)</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#!">MCT-3 Lead (14 Days)</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#!">MCT-3 Lead (14 Days</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" href="#!">MCT-3 Lead (14 Days)</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#!">MCT-3 Lead (14 Days)</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#!">MCT-3 Lead (14 Days)</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#!">MCT-3 Lead (14 Days)</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Grid row -->
+                                    <div class="row">
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <select class="mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Type Of Study <span class="required">*</span></option>
+                                                    <option value="Holter – 3 Lead">Holter – 3 Lead</option>
+                                                    <option value="Holter – 4 Lead">Holter – 4 Lead</option>
+                                                    <option value="Holter – 5 Lead">Holter – 5 Lead</option>
+                                                    <option value="Holter – 7 Lead">Holter – 7 Lead</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <select class="mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Duration <span class="required">*</span></option>
+                                                    <option value="2 Days -48 Hours">2 Days -48 Hours</option>
+                                                    <option value="3 Days -72 Hours">3 Days -72 Hours</option>
+                                                    <option value="5 Days -120 Hours">5 Days -120 Hours</option>
+                                                    <option value="7 Days -168 Hours">7 Days -168 Hours</option>
+                                                    <option value="10 Days -240 Hours">10 Days -240 Hours</option>
+                                                    <option value="14 Days -336 Hours">14 Days -336 Hours</option>
+                                                    <option value="21 Days -504 Hours">21 Days -504 Hours</option>
+                                                    <option value="31 Days -744 Hours">31 Days -744 Hours</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <select class="mdb-select colorful-select dropdown-primary" multiple searchable="Search here..">
+                                                    <option value="" disabled selected>Diagnosis (ICD-10): *</option>
+                                                    <option value="2 Days -48 Hours">R94.31-Abnormal EKG</option>
+                                                    <option value="3 Days -72 Hours">3 Days -72 Hours</option>
+                                                    <option value="5 Days -120 Hours">5 Days -120 Hours</option>
+                                                    <option value="7 Days -168 Hours">7 Days -168 Hours</option>
+                                                    <option value="10 Days -240 Hours">10 Days -240 Hours</option>
+                                                    <option value="14 Days -336 Hours">14 Days -336 Hours</option>
+                                                    <option value="21 Days -504 Hours">21 Days -504 Hours</option>
+                                                    <option value="31 Days -744 Hours">31 Days -744 Hours</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+
+                                            <div class="md-form">
+                                                <input placeholder="Date Of Service (MM/DD/YYY)" type="text" id="date-picker-example" class="form-control datepicker">
+
+                                            </div>
+
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                                            <!-- Material input -->
+
+                                            <div class="md-form">
+                                                <input placeholder="Hookup Time *" type="text" id="input_starttime" class="form-control timepicker">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-sm-12  col-lg-12 col-xl-12">
+
+                                            <!-- Material input -->
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <p class="grey-text">Reports To Publish: <span class="required">*</span> Stable Events, Urgent Events <span><i class="fa fa-pencil" id="ReportsToPublish" style="cursor:pointer; background-color: #114786; color: #fff; padding: 3px 5px; border-radius:4px; float:right;"></i></span></p>
+
+                                                </div>
+
+                                            </div>
+                                            <div id="ReportsToPublishList" style="border:1px solid #ddd; padding: 5px; display: none;">
+                                                <div class="row">
+
+                                                    <div class="col-xl-4 col-lg-6 col-md-12">
+
+                                                        <!-- Material inline 4 -->
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="materialInline40" name="inlineMaterialRadiosExample">
+                                                            <label class="form-check-label" for="materialInline40">Stable Events</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="materialInline50" name="inlineMaterialRadiosExample">
+                                                            <label class="form-check-label" for="materialInline50">Urgent Events</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-6 col-md-12">
+
+                                                        <!-- Material inline 4 -->
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="materialInline4" name="inlineMaterialRadiosExample">
+                                                            <label class="form-check-label" for="materialInline4">Daily Summary of Events</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="materialInline5" name="inlineMaterialRadiosExample">
+                                                            <label class="form-check-label" for="materialInline5">Weekly Summary of Events</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-6 col-md-12">
+                                                        <!-- Material inline 5 -->
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="materialInline3" name="inlineMaterialRadiosExample">
+                                                            <label class="form-check-label" for="materialInline3">Exclude Repetitive Events</label>
+                                                        </div>
+                                                        <!-- Material inline 6 -->
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="materialInline6" name="inlineMaterialRadiosExample">
+                                                            <label class="form-check-label" for="materialInline6">End of Service Summary</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <hr/>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <p class="grey-text">Device Settings: Bradycardia HR(30 BPM), Tachycardia HR(100 BPM), Pause Threshold(3 Seconds ), AFB Events: Enable, Disable <span class="text-right"><i class="fa fa-pencil" id="DeviceSettings" style="cursor:pointer; background-color: #114786; color: #fff; padding: 3px 5px; border-radius:4px; float:right;"></i></span></p>
+                                            <!-- <ul class="nav grey lighten-4 py-4">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" href="#!">Device Settings:Bradycardia HR(30 BPM),Tachycardia HR(100 BPM),Pause Threshold(3 Seconds ),AFB Events:Enable,Disable <span><i class="fa fa-pencil" id="DeviceSettings" style="cursor:pointer; background-color: #114786; color: #fff; padding: 3px 5px; border-radius:4px;"></i></span></a>
+                                                    </li>
+
+                                                </ul> -->
+                                        </div>
+                                        <div class="col-sm-12  col-lg-12 col-xl-12">
+
+                                            <div class="mt-3" id="DeviceSettingsList" style="border:1px solid #ddd; padding: 5px; display: none;">
+
+                                                <div class="row">
+
+                                                    <div class="col-sm-12 col-xl-4 col-lg-4">
+                                                        <label class="active">Bradycardia Heart Rate</label>
+
+                                                        <input type="text" class="form-control" placeholder="40 BPM">
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-xl-2 col-lg-2">
+
+                                                        <p class="" style="margin-top: 2.5rem;">(30-100 BPM)</p>
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-xl-4 col-lg-4">
+                                                        <label class="active">Tachycardia Heart Rate</label>
+
+                                                        <input type="text" class="form-control" placeholder="150 BPM">
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-xl-2 col-lg-2">
+
+                                                        <p class="" style="margin-top: 2.5rem;">(60-100 BPM)</p>
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="row">
+
+                                                    <div class="col-sm-12 col-xl-4 col-lg-4">
+                                                        <label class="active">Pause Duration Threshold</label>
+
+                                                        <input type="text" class="form-control" placeholder="3 Seconds">
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-xl-2 col-lg-2">
+
+                                                        <p class="" style="margin-top: 2.5rem;">(1.5-15) Seconds</p>
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-xl-6 col-lg-6">
+                                                        <label>Atrial Fibrillation Events</label>
+
+                                                        <div class="md-form mt-0">
+
+                                                            <div class="form-check form-check-inline">
+                                                                <input type="radio" class="form-check-input" id="materialInline111" name="inlineMaterialRadiosExample">
+                                                                <label class="form-check-label" for="materialInline111">Enable</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input type="radio" class="form-check-input" id="materialInline112" name="inlineMaterialRadiosExample">
+                                                                <label class="form-check-label" for="materialInline112">Disable</label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12 text-right">
+                                                        <button type="button" class="btn btn-sm btn-global">Update</button>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="row">
+
+                                                        <div class="col-xl-3 col-lg-6 col-md-12">
+                                                            <div class="md-form">
+                                                                <input type="text" class="form-control" placeholder="40 BPM">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-6 col-md-12">
+                                                            <div class="md-form">
+                                                                <input type="text" class="form-control" placeholder="150 BPM">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-6 col-md-12">
+                                                            <div class="md-form">
+                                                                <input type="text" class="form-control" placeholder="3 Seconds">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-3 col-lg-6 col-md-12 mt-3">
+                                                            <label>Atrial Fibrillation Events</label>
+                                                            <div class="row">
+                                                                <div class="col-xl-6">
+                                                                    <input type="radio" class="form-check-input" id="materialInline111" name="inlineMaterialRadiosExample">
+                                                                    <label class="form-check-label" for="materialInline111">Enable</label>
+                                                                </div>
+                                                                <div class="col-xl-6 pl-0">
+                                                                    <input type="radio" class="form-check-input" id="materialInline112" name="inlineMaterialRadiosExample">
+                                                                    <label class="form-check-label" for="materialInline112">Disable</label>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <button type="button" class="btn btn-sm btn-primary">Update</button>
+                                                        </div>
+                                                    </div> -->
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </section>
+                            <!--end of #Study-Settings-->
+
+                            <section id="Patient-Demographics">
+                                <form>
+                                    <!-- Grid row -->
+                                    <h5 class=""><i class="fa fa-user pr-3" aria-hidden="true"></i> Patient Demographics</h5>
+
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form mt-0">
+                                                <!-- Material input -->
+                                                <div class="md-form">
+                                                    <input type="text" id="fN1" class="form-control">
+                                                    <label for="fN1">First Name <span class="required">*</span></label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <!-- Material input -->
+                                                <div class="md-form">
+                                                    <input type="text" id="mN1" class="form-control">
+                                                    <label for="mN1">Middle Name <span class="required">*</span></label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <!-- Material input -->
+                                                <div class="md-form">
+                                                    <input type="text" id="lN1" class="form-control">
+                                                    <label for="lN1">Last Name <span class="required">*</span></label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- Grid row -->
+                                    <!-- <h6 class=""> Address</h6> -->
+
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st1" class="form-control">
+                                                <label for="st1">Street Address1 <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st2" class="form-control">
+                                                <label for="st2">Street Address2 <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st1" class="form-control">
+                                                <label for="st1">City <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st2" class="form-control">
+                                                <label for="st2">State <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st2" class="form-control">
+                                                <label for="st2">Zip <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <!-- Material input -->
+                                                <div class="md-form">
+                                                    <label for="st2">Date Of Birth <span class="required">*</span></label>
+                                                    <input type="text" id="date-picker-example" class="form-control datepicker">
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <!-- Material input -->
+                                                <div class="md-form">
+                                                    <input type="text" id="lN1" class="form-control">
+                                                    <label for="lN1">Email </label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <!-- Material input -->
+                                                <div class="md-form">
+                                                    <input type="text" id="mN1" class="form-control">
+                                                    <label for="mN1">Telephone <span class="required">*</span></label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                    </div>
+                                    <!-- Grid row -->
+
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="mN1" class="form-control">
+                                                <label for="mN1">Patiend ID (MRN/SSN) (Optional)</label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <label for="mN1">Sex <span class="required">*</span></label>
+                                                <select class="mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected></option>
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Female</option>
+                                                    <option value="3">Transgender</option>
+
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                    </div>
+
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-3 col-xl-3">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <label for="mN1">Implanted Device<span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-7 col-xl-7">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" id="materialInline11" name="inlineMaterialRadiosExample">
+                                                    <label class="form-check-label" for="materialInline11">None</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" id="materialInline11" name="inlineMaterialRadiosExample">
+                                                    <label class="form-check-label" for="materialInline11">Unknown</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" id="materialInline12" name="inlineMaterialRadiosExample">
+                                                    <label class="form-check-label" for="materialInline12">Pacemaker</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" class="form-check-input" id="materialInline13" name="inlineMaterialRadiosExample">
+                                                    <label class="form-check-label" for="materialInline13">ICD</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                    </div>
+                                    <!-- Grid row -->
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-3 col-xl-3">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <label for="mN1">Additional Comments</label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-9 col-xl-9">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <div class="form-group">
+
+                                                    <textarea class="form-control" id="exampleFormControlTextarea3" rows="5" style="height: 150px;"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                    </div>
+                                    <!-- Grid row -->
+                                </form>
+                            </section>
+                            <!--end of Patient-Demographics-->
+                            <section id="Patient-Insurance" class="">
+
+                                <form>
+                                    <!-- Grid row -->
+
+                                    <h5 class=""><i class="fa fa-shield pr-3" aria-hidden="true"></i> Patient Insurance</h5>
+
+                                    <div class="row">
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <select class="mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Type Of Insurance <span class="required">*</span></option>
+                                                    <option value="Private/Commercial">Private/Commercial</option>
+                                                    <option value="HMO">HMO</option>
+                                                    <option value="Worker’s Compensation">Worker’s Compensation</option>
+                                                    <option value="Self Pay">Self Pay</option>
+                                                    <option value="Medicare">Medicare</option>
+                                                    <option value="Other">Other</option>
+
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="mN122" class="form-control">
+                                                <label for="mN122" class="">Insurance Company <span class="required">*</span></label>
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="mN133" class="form-control">
+                                                <label for="mN133" class="">Subscriber Name <span class="required">*</span></label>
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="mN1" class="form-control">
+                                                <label for="mN1" class="">Subscriber DOB <span class="required">*</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <select class="mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Sex <span class="required">*</span></option>
+                                                    <option value="Self">Male</option>
+                                                    <option value="Parent/Guardian">Female</option>
+                                                    <option value="Spouse">Transgender</option>
+
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <!-- Material input -->
+                                                <div class="md-form">
+                                                    <input type="text" id="fN1" class="form-control">
+                                                    <label for="fN1" class="">Policy/ID Number <span class="required">*</span></label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <!-- Material input -->
+                                                <div class="md-form">
+                                                    <input type="text" id="mN1" class="form-control">
+                                                    <label for="mN1">Group <span class="required">*</span></label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <select class="mdb-select colorful-select dropdown-primary">
+                                                    <option value="" disabled selected>Relation To Patient <span class="required">*</span></option>
+                                                    <option value="Self">Self</option>
+                                                    <option value="Parent/Guardian">Parent/Guardian</option>
+                                                    <option value="Spouse">Spouse</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st1" class="form-control">
+                                                <label for="st1" class="">Prior Authorization # (If Needed)</label>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-sm-12 mt-5" style="border-bottom:1px solid #ddd;">
+                                            <div class="row">
+                                                <div class="col-xl-4 col-lg-6 col-sm-12">
+                                                    <h6 class=" font-bold mt-2" style="color:#114786;">Subscriber Address</h6>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-sm-12">
+                                                    <!-- Grid column -->
+
+                                                    <!-- Material input -->
+                                                    <div class="md-form mt-0 mb-3">
+
+                                                        <input type="checkbox" class="form-check-input" id="materialInline31" name="inlineMaterialRadiosExample">
+                                                        <label class="form-check-label" for="materialInline31">Address Same As Patient</label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st1" class="form-control">
+                                                <label for="st1" class="">Street Address1 <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st2" class="form-control">
+                                                <label for="st2">Street Address2 <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st1" class="form-control">
+                                                <label for="st1" class="">City <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st2" class="form-control">
+                                                <label for="st2">State <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st2" class="form-control">
+                                                <label for="st2">Zip <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 mt-5" style="border-bottom:1px solid #ddd;">
+                                            <h6 class="" style="color:#114786;">Claims Submission Address</h6>
+                                        </div>
+                                        <hr/>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st1" class="form-control">
+                                                <label for="st1" class="">Street Address1 <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st2" class="form-control">
+                                                <label for="st2">Street Address2 <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <!-- Material input -->
+                                                <div class="md-form">
+                                                    <input type="text" id="lN1" class="form-control">
+                                                    <label for="lN1">Claims Telephone <span class="required">*</span></label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <!-- Grid column -->
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st1" class="form-control">
+                                                <label for="st1" class="">City <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st2" class="form-control">
+                                                <label for="st2">State <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <input type="text" id="st2" class="form-control">
+                                                <label for="st2">Zip <span class="required">*</span></label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-sm-12 ">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+
+                                                <label class="pl-3" for="st2">Additional Comments</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea3" rows="5" style="height: 100px;"></textarea>
+                                            </div>
+                                            <div class="text-right">
+                                                <a class="btn btn-global  text-right" id="AddSecondary">Add Secondary</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <section id="AddSecondaryDiv" class="">
+
+                                        <form>
+                                            <!-- Grid row -->
+
+                                            <h5 class=""><i class="fa fa-shield pr-3" aria-hidden="true"></i>Secondary Insurance</h5>
+
+                                            <div class="row">
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+
+                                                        <select class="mdb-select colorful-select dropdown-primary">
+                                                            <option value="" disabled selected>Type Of Insurance <span class="required">*</span></option>
+                                                            <option value="Private/Commercial">Private/Commercial</option>
+                                                            <option value="HMO">HMO</option>
+                                                            <option value="Worker’s Compensation">Worker’s Compensation</option>
+                                                            <option value="Self Pay">Self Pay</option>
+                                                            <option value="Medicare">Medicare</option>
+                                                            <option value="Other">Other</option>
+
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+                                                <!-- Grid column -->
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="mN122" class="form-control">
+                                                        <label for="mN122" class="">Insurance Company <span class="required">*</span></label>
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="mN133" class="form-control">
+                                                        <label for="mN133" class="">Subscriber Name <span class="required">*</span></label>
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+
+                                            </div>
+
+                                            <div class="row">
+
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="mN1" class="form-control">
+                                                        <label for="mN1" class="">Subscriber DOB <span class="required">*</span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+
+                                                        <select class="mdb-select colorful-select dropdown-primary">
+                                                            <option value="" disabled selected>Sex <span class="required">*</span></option>
+                                                            <option value="Self">Male</option>
+                                                            <option value="Parent/Guardian">Female</option>
+                                                            <option value="Spouse">Transgender</option>
+
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <!-- Material input -->
+                                                        <div class="md-form">
+                                                            <input type="text" id="fN1" class="form-control">
+                                                            <label for="fN1" class="">Policy/ID Number <span class="required">*</span></label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+
+                                            </div>
+
+                                            <div class="row">
+
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <!-- Material input -->
+                                                        <div class="md-form">
+                                                            <input type="text" id="mN1" class="form-control">
+                                                            <label for="mN1">Group <span class="required">*</span></label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+
+                                                        <select class="mdb-select colorful-select dropdown-primary">
+                                                            <option value="" disabled selected>Relation To Patient <span class="required">*</span></option>
+                                                            <option value="Self">Self</option>
+                                                            <option value="Parent/Guardian">Parent/Guardian</option>
+                                                            <option value="Spouse">Spouse</option>
+                                                            <option value="Other">Other</option>
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st1" class="form-control">
+                                                        <label for="st1" class="">Prior Authorization # (If Needed)</label>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-sm-12 mt-5" style="border-bottom:1px solid #ddd;">
+                                                    <div class="row">
+                                                        <div class="col-xl-4 col-lg-6 col-sm-12">
+                                                            <h6 class=" font-bold mt-2" style="color:#114786;">Subscriber Address</h6>
+                                                        </div>
+                                                        <div class="col-xl-6 col-lg-6 col-sm-12">
+                                                            <!-- Grid column -->
+
+                                                            <!-- Material input -->
+                                                            <div class="md-form mt-0 mb-3">
+
+                                                                <input type="checkbox" class="form-check-input" id="materialInline31" name="inlineMaterialRadiosExample">
+                                                                <label class="form-check-label" for="materialInline31">Address Same As Patient</label>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- Grid column -->
+                                                <div class="col-sm-12  col-lg-6 col-xl-6">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st1" class="form-control">
+                                                        <label for="st1" class="">Street Address1 <span class="required">*</span></label>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+
+                                                <div class="col-sm-12  col-lg-6 col-xl-6">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st2" class="form-control">
+                                                        <label for="st2">Street Address2 <span class="required">*</span></label>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+
+                                                <!-- Grid column -->
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st1" class="form-control">
+                                                        <label for="st1" class="">City <span class="required">*</span></label>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st2" class="form-control">
+                                                        <label for="st2">State <span class="required">*</span></label>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st2" class="form-control">
+                                                        <label for="st2">Zip <span class="required">*</span></label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 mt-5" style="border-bottom:1px solid #ddd;">
+                                                    <h6 class="" style="color:#114786;">Claims Submission Address</h6>
+                                                </div>
+                                                <hr/>
+                                            </div>
+
+                                            <div class="row">
+
+                                                <!-- Grid column -->
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st1" class="form-control">
+                                                        <label for="st1" class="">Street Address1 <span class="required">*</span></label>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st2" class="form-control">
+                                                        <label for="st2">Street Address2 <span class="required">*</span></label>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <!-- Material input -->
+                                                        <div class="md-form">
+                                                            <input type="text" id="lN1" class="form-control">
+                                                            <label for="lN1">Claims Telephone <span class="required">*</span></label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <!-- Grid column -->
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st1" class="form-control">
+                                                        <label for="st1" class="">City <span class="required">*</span></label>
+
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st2" class="form-control">
+                                                        <label for="st2">State <span class="required">*</span></label>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12  col-lg-4 col-xl-4">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="st2" class="form-control">
+                                                        <label for="st2">Zip <span class="required">*</span></label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-sm-12 ">
+                                                    <!-- Material input -->
+                                                    <div class="md-form">
+
+                                                        <label class="pl-3" for="st2">Additional Comments</label>
+                                                        <textarea class="form-control" id="exampleFormControlTextarea3" rows="5" style="height: 100px;"></textarea>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </form>
+                                    </section>
+                                    <div class="row">
+                                        <div class="col-sm-12  col-lg-12 col-xl-12 text-right  pr-0">
+                                            <!-- Material input -->
+                                            <div class="md-form">
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input" id="materialInline101">
+                                                    <label class="form-check-label" for="materialInline101">E-Sign</label>
+                                                </div>
+
+                                                <!-- Material inline 2 -->
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input" id="materialInline201">
+                                                    <label class="form-check-label" for="materialInline201">Print Form</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <a class="btn btn-global mt-5">Start Study </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                            </section>
+
+                            <!--end of #Patient-Insurance-->
+                        </div>
+                    </div>
+                </div>
+                <div class="scrollspy d-none  d-lg-block">
+                    <div id="list-example" class="list-group  affix" data-spy="affix">
+                        <a class="list-group-item list-group-item-action active" href="#Physician-Information">Physician Information</a>
+                        <a class="list-group-item list-group-item-action" href="#Study-Settings">Study Settings</a>
+                        <a class="list-group-item list-group-item-action" href="#Patient-Demographics">Patient Demographics</a>
+                        <a class="list-group-item list-group-item-action" href="#Patient-Insurance">Patient Insurance</a>
+                    </div>
+
+                </div>
+            </div>
+            <!--end of .row-->
+
+        </div>
+        <!--container-fluid -->
+    </main>
+    <!--Footer-->
+    <footer class="page-footer center-on-small-only pt-0 mt-5" style="background-color:#fff; border: 1px solid #ddd;     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+
+        <div class="footer-copyright" style="background-color:#fff;">
+            <div class="container-fluid text-center">
+                <!-- <p class="mt-2 mb-2"> &copy; 2017 Copyright: <a href="https://www.cardianex.com/"> cardianex.com </a></p> -->
+                <div class="row justify-content-center">
+                    <div class="media">
+
+                        <div class="media-body">
+                            <h5 class="mt-3">Powered By</h5>
+
+                        </div>
+                        <img src="img/cardianexlogo.png" class="img-fluid  footer-logo">
+                    </div>
+                    <!-- <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4  text-center">
+                        <h5 class="mt-2 mb-0 grey-text">Powered By</h5>
+                        <img src="img/cardianexlogo.png" class="img-fluid  footer-logo">
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- popperjs -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script>
+        // SideNav Initialization
+        $(".button-collapse").sideNav();
+
+        // Tooltips Initialization
+        $(function() {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+            // Material Select Initialization
+        $(document).ready(function() {
+            $('.mdb-select').material_select();
+            $('#ReportsToPublish').click(function() {
+                $('#ReportsToPublishList').toggle();
+
+            });
+            $('#DeviceSettings').click(function() {
+                $('#DeviceSettingsList').toggle();
+
+            });
+            $('#AddSecondary').click(function() {
+                $('#AddSecondaryDiv').toggle();
+
+            });
+        });
+        // Data Picker Initialization
+        $('.datepicker').pickadate();
+        $('#input_starttime').pickatime({
+            // 12 or 24 hour
+            twelvehour: true,
+        });
+    </script>
+
+    <script>
+        // Scrollspy //
+        $('#nav').affix({
+            offset: {
+                top: $('#nav').offset().top,
+                bottom: ($('footer').outerHeight(true) + $('.application').outerHeight(true)) + 40
+            }
+        });
+    </script>
+
+</body>
+
+</html>

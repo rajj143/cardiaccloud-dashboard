@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="font/flat-icon/flaticon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style></style>
+</head>
+
+<body class="hidden-sn white-skin">
+    <header>
+        <div id="slide-out" class="side-nav mdb-sidenav">
+            <ul class="custom-scrollbar list-unstyled" style="max-height:100vh;">
+                <li>
+                    <div class="logo-wrapper waves-light">
+                        <a href="index.html"><img src="img/cardianexlogo.png" class="img-fluid flex-center"></a>
+                    </div>
+                </li>
+                <li><a href="index.html" class="waves-effect"><i class="fa fa-home pr-2"></i> Home</a></li>
+                <li><a href="patient-enrollment.html" class="waves-effect"><i class="fa fa-user pr-2"></i> Patient Enrollment</a></li>
+                <li><a href="upload-data.html" class="waves-effect"><i class="fa fa-upload pr-2"></i> Upload Data</a></li>
+                <li><a href="request-suppliers.html" class="waves-effect"><i class="fa fa-cart-plus pr-2"></i> Request Suppliers</a></li>
+                <li>
+                    <a href="managedevices.html" class="waves-effect"> <i class="flaticon-cardiogram-9 pr-2"></i> Manage Devices</a>
+                </li>
+            </ul>
+            <div class="sidenav-bg mask-strong"></div>
+        </div>
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+            <div class="float-left d-md-block d-xl-none"> <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons md-light">menu</i></a></div>
+            <div class="breadcrumb-dn mr-auto">
+                <a class="navbar-brand" href="index.html"><img class="logo" src="img/cardianexlogo.png" class=""></a>
+            </div>
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                <li class="nav-item"> <a class="nav-link waves-effect"><i class="fa fa-phone"></i> <span class="clearfix d-none d-sm-inline-block">(888)-633-2689</span></a></li>
+                <li class="nav-item"> <a class="nav-link waves-effect"><i class="fa fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">support@cardianex.com</span></a></li>
+                <li class="nav-item"> <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block">Live Chat</span></a></li>
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Profile </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#"><i class="fa fa-user-o pr-2" aria-hidden="true"></i> <span class="clearfix d-sm-inline-block">My Account</span></a> <a class="dropdown-item" href="#"><i class="fa fa-power-off pr-2" aria-hidden="true"></i> <span class="clearfix d-sm-inline-block">Logout</span></a></div>
+                </li>
+            </ul>
+        </nav>
+        <div class="list-group list-group-cstm icon-bar d-none d-md-none d-lg-none d-xl-block"> <a class="nav-link list-group-item" href=""><i class="fa fa-bars"></i></a> <a class="nav-link list-group-item" href="index.html"><i class="fa fa-home"></i></a>
+            <a class="nav-link list-group-item" href="patient-enrollment.html"> <i class="fa fa-user"></i> </a>
+            <a class="nav-link list-group-item" href="upload-data.html"> <i class="fa fa-upload"></i> </a>
+            <a href="request-suppliers.html" class="nav-link list-group-item"> <i class="fa fa-cart-plus"></i> </a>
+            <a href="managedevices.html" class="nav-link list-group-item active"> <i class="flaticon-cardiogram-9"></i> </a>
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <section class="mt-3">
+                <div class="row justify-content-end">
+                    <div class="col-xl-9 col-lg-8">
+                        <h4 class="pb-2 text-left">Device Management</h4>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 searchbar">
+                        <div class="md-form input-group mt-0 mb-3">
+                            <div class="input-group-prepend"> <span class="input-group-text"><i class="fa fa-search"></i></span></div>
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <div class="input-group-append">
+                                <span class="input-group-text" data-toggle="modal" data-target="#AdvanceSearch"><i class="fa fa-angle-down" data-toggle="tooltip" data-placement="top" title="Advance Search"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="card cstm-card-primary">
+                            <p class="card-header card-primary white-text">
+                                <span class="btn btn-primary btn-sm btn-badge-primary">28</span>Total Devices
+
+                            </p>
+                            <div class="card-body pt-2">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-4 col-md-4">
+                                        <h5 class="mb-2">TZ Medical</h5>
+                                        <h5 class="mb-2"> <span class="">24</span> <span>::</span> <span class="cstm-text-success">15 </span></h5>
+                                        <p class="mb-0">Clarus 40-M</p>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4">
+                                        <h5 class="mb-2">TZ Medical</h5>
+                                        <h5 class="mb-2"> <span class="">24</span> <span>::</span> <span class="cstm-text-success">15 </span></h5>
+                                        <p class="mb-0">Clarus 40-M</p>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4">
+                                        <h5 class="mb-2">TZ Medical</h5>
+                                        <h5 class="mb-2"> <span class="">24</span> <span>::</span> <span class="cstm-text-success">15 </span></h5>
+                                        <p class="mb-0">Clarus 40-M</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="arrow-rt"><i class="fa fa-angle-right"></i></a>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="card cstm-card-success">
+                            <p class="card-header white-text">
+                                <span class="btn btn-sm btn-badge-green">4256</span>Active Studies
+
+                            </p>
+                            <div class="card-body pt-2">
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                                        <h5 class="mt-3 mb-1">20</h5>
+                                        <p class="">Holters</p>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                                        <h5 class="mt-3 mb-1">40</h5>
+                                        <p class="">AECG</p>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                                        <h5 class="mt-3 mb-1">60</h5>
+                                        <p class="">Event Monitors</p>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                                        <h5 class="mt-3 mb-1">80</h5>
+                                        <p class="">MCT's</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="arrow-rt"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mt-2 cardianex-table">
+                <div class="card">
+                    <div class="row px-2 mt-2 justify-content-end">
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Make</option>
+                                <option value="2921">TZ Medical</option>
+                                <option value="2921">PAS</option>
+                                <option value="1563">G-Medical Innovations</option>
+                                <option value="1563">DMS Service</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Model</option>
+                                <option value="3549">Clarus 40</option>
+                                <option value="3549">RJ421-0050</option>
+                                <option value="3549">GMP</option>
+                                <option value="1563">DMS Service</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Filter</option>
+                                <option value="0">All</option>
+                                <option value="1">Active</option>
+                                <option value="2">Assigned</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-sm-6 text-right mt-2 action-icons">
+                            <ul class="nav justify-content-end">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="modal" data-target="#modalContactForm">
+                                        <span data-toggle="tooltip" data-placement="top" title="Add Device"> <i class="fa fa-plus" aria-hidden="true" ></i></span>
+                                    </a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="modal" data-target="#TransferDevice">
+                                        <span data-toggle="tooltip" data-placement="top" title="Transfer Device"> <i class="fa fa-random" aria-hidden="true" ></i></span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="modal" data-target="#ReplaceDevice">
+                                        <span data-toggle="tooltip" data-placement="top" title="Replace Device"> <i class="fa fa-exchange" aria-hidden="true" ></i></span>
+                                    </a>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tooltip" data-placement="top" title="Export Csv">
+                                        <i class="fa fa fa-share-square" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle btn-cog" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span data-toggle="tooltip" data-placement="top" title="Settings"><i class="fa fa-cog"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Configure Columns</a>
+                                        <a class="dropdown-item" href="#">Configure Actions</a>
+
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle btn-cog" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span data-toggle="tooltip" data-placement="top" title="More"><i class="fa fa-ellipsis-v"></i></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#importDevice"><i class="fa fa-download pr-2"></i>Import Devices</a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#ExportDevice"><i class="fa fa-upload pr-2"></i>Export Devices</a>
+                                        <a class="dropdown-item" href="devicetransferlog.html"><i class="fa fa-clone pr-2"></i>Device Transfer Log</a>
+                                        <a class="dropdown-item" href="devicehistory.html"><i class="fa fa-history pr-2"></i>Device History</a>
+                                        <a class="dropdown-item" href="deviceutilization.html"><i class="fa fa-file pr-2"></i> Device Utilization Report</a>
+                                        <a class="dropdown-item" href="#"><i class="fa fa-envelope pr-2"></i>Email</a>
+                                        <a class="dropdown-item" href="#"><i class="fa fa-print pr-2"></i> Print</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                    <div class="table-responsive text-nowrap p-2">
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <input type="checkbox" id="checkbox">
+                                        <label for="checkbox" class="mr-2 label-table"></label>
+                                    </th>
+                                    <th>Make<a href="#"><i class="fa fa-sort ml-1" ></i></a></th>
+                                    <th>Model<a href="#"><i class="fa fa-sort ml-1" ></i></a></th>
+                                    <th> Serial No<a href="#"><i class="fa fa-sort ml-1" ></i></a></th>
+                                    <th>Added on <a href="#"><i class="fa fa-sort ml-1" ></i></a></th>
+                                    <th> Status<a href="#"><i class="fa fa-sort ml-1" ></i></a></th>
+                                    <th>Group Name <a href="#"><i class="fa fa-sort ml-1" ></i></a></th>
+                                    <th>Location <a href="#"><i class="fa fa-sort ml-1" ></i></a></th>
+                                    <th>Patient Name <a href="#"><i class="fa fa-sort ml-1" ></i></a></th>
+                                    <th>Study ID<a href="#"><i class="fa fa-sort ml-1" ></i></a></th>
+                                    <th>Study Info <a href="#"><i class="fa fa-sort ml-1" ></i></a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="checkbox1">
+                                        <label for="checkbox1" class="label-table"></label>
+                                    </td>
+                                    <td>DMS Service</td>
+                                    <td>myPatch-sl</td>
+                                    <td>1234567891</td>
+                                    <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06 AM</small></span> </span>
+                                    </td>
+                                    <td>Assigned</td>
+                                    <td>1234567891</td>
+                                    <td>Austin</td>
+                                    <td>1234567891</td>
+                                    <td>1234567891</td>
+                                    <td class="device-infrmtn" style="position: relative;"><span class="">Holter 14 Days</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" style="width:30%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="checkbox1">
+                                        <label for="checkbox1" class="label-table"></label>
+                                    </td>
+                                    <td>DMS Service</td>
+                                    <td>myPatch-sl</td>
+                                    <td>1234567891</td>
+                                    <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06 AM</small></span> </span>
+                                    </td>
+                                    <td>Assigned</td>
+                                    <td>1234567891</td>
+                                    <td>Austin</td>
+                                    <td>1234567891</td>
+                                    <td>1234567891</td>
+                                    <td class="device-infrmtn" style="position: relative;"><span class="">Holter 14 Days</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" style="width:10%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="checkbox1">
+                                        <label for="checkbox1" class="label-table"></label>
+                                    </td>
+                                    <td>DMS Service</td>
+                                    <td>myPatch-sl</td>
+                                    <td>1234567891</td>
+                                    <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06 AM</small></span> </span>
+                                    </td>
+                                    <td>Available</td>
+                                    <td>1234567891</td>
+                                    <td>Test001</td>
+                                    <td>1234567891</td>
+                                    <td>1234567891</td>
+                                    <td class="device-infrmtn" style="position: relative;"><span class="">Holter 14 Days</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" style="width:70%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="checkbox1">
+                                        <label for="checkbox1" class="label-table"></label>
+                                    </td>
+                                    <td>DMS Service</td>
+                                    <td>myPatch-sl</td>
+                                    <td>1234567891</td>
+                                    <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06 AM</small></span> </span>
+                                    </td>
+                                    <td>De-Activated</td>
+                                    <td>1234567891</td>
+                                    <td>Test002</td>
+                                    <td>1234567891</td>
+                                    <td>1234567891</td>
+                                    <td class="device-infrmtn" style="position: relative;"><span class="">Holter 14 Days</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" style="width:10%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="checkbox1">
+                                        <label for="checkbox1" class="label-table"></label>
+                                    </td>
+                                    <td>DMS Service</td>
+                                    <td>myPatch-sl</td>
+                                    <td>1234567891</td>
+                                    <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06 AM</small></span> </span>
+                                    </td>
+                                    <td>Sent for repair</td>
+                                    <td>1234567891</td>
+                                    <td>Test001</td>
+                                    <td>1234567891</td>
+                                    <td>1234567891</td>
+                                    <td class="device-infrmtn" style="position: relative;"><span class="">Holter 14 Days</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" style="width:10%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="checkbox1">
+                                        <label for="checkbox1" class="label-table"></label>
+                                    </td>
+                                    <td>DMS Service</td>
+                                    <td>myPatch-sl</td>
+                                    <td>1234567891</td>
+                                    <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06 AM</small></span> </span>
+                                    </td>
+                                    <td>End of life retired</td>
+                                    <td>1234567891</td>
+                                    <td>Test001</td>
+                                    <td>1234567891</td>
+                                    <td>1234567891</td>
+                                    <td class="device-infrmtn" style="position: relative;"><span class="">Holter 14 Days</span>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" style="width:10%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-xl-2 col-lg-2 col-sm-6">
+                            <select class="mdb-select colorful-select dropdown-primary hidden-md-down mx-2">
+                                <option value="" disabled>Show Rows</option>
+                                <option value="1" selected>5 rows</option>
+                                <option value="2">25 rows</option>
+                                <option value="3">50 rows</option>
+                                <option value="4">100 rows</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-4 col-lg-5 col-sm-6 offset-xl-2">
+                            <nav class="mt-3">
+                                <ul class="pagination pagination-circle pg-blue mb-0">
+                                    <li class="page-item disabled clearfix d-none d-md-block"><a class="page-link">First</a></li>
+                                    <li class="page-item disabled">
+                                        <a class="page-link" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> <span class="sr-only">Previous</span> </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link">1</a></li>
+                                    <li class="page-item"><a class="page-link">2</a></li>
+                                    <li class="page-item"><a class="page-link">3</a></li>
+                                    <li class="page-item"><a class="page-link">4</a></li>
+                                    <li class="page-item"><a class="page-link">5</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span class="sr-only">Next</span> </a>
+                                    </li>
+                                    <li class="page-item clearfix d-none d-md-block"><a class="page-link">Last</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-sm-12 mr-2 mt-2">
+                            <div class="d-flex justify-content-end">
+                                <span class="pagination_label">Page</span>
+                                <div class="md-form mt-2 col-sm-2 px-2">
+                                    <input class="form-control p-0" type="text" placeholder="1">
+                                </div>
+                                <span class="pagination_label">of 3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="page-footer center-on-small-only pt-0 mt-5" style="background-color:#fff; border: 1px solid #ddd; box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+        <div class="footer-copyright" style="background-color:#fff;">
+            <div class="container-fluid text-center">
+                <div class="row justify-content-center">
+                    <div class="media">
+                        <div class="media-body">
+                            <h5 class="mt-3">Powered By</h5>
+                        </div> <img src="img/cardianexlogo.png" class="img-fluid footer-logo"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script>
+        $(".button-collapse").sideNav();
+        $(function() {
+            $('[data-toggle="tooltip" ]').tooltip()
+        })
+        $(document).ready(function() {
+            $('.mdb-select').material_select();
+            $('.datepicker').pickadate();
+            $('#filter').click(function() {
+                $('#searcharea').toggle();
+            });
+            $('#collate').click(function() {
+                $('#searcharea-physcn').toggle();
+            });
+        });
+    </script>
+</body>
+<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Add Device</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Make</option>
+                                <option value="2921">TZ Medical</option>
+                                <option value="2921">PAS</option>
+                                <option value="1563">G-medical Innovations</option>
+                                <option value="1563">DMS Service</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Model</option>
+                                <option value="3549">Clarus 40</option>
+                                <option value="3549">RJ421-0050</option>
+                                <option value="3549">GMP</option>
+                                <option value="1563">DMS Service</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Enter Serial Number</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Confirm Serial Number</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" id="getdata" class="btn btn-global-green"><i class="fa fa-plus pr-2"></i>Add Device</button>
+                <button type="button" id="getdata" class="btn btn-primary"><i class="fa fa-filter pr-2"></i>Clear</button>
+                <button type="button" id="getdata" class="btn btn-primary" data-dismiss="modal" aria-label="Close"><i class="fa fa-close pr-2"></i>Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="EditDevice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Edit Device</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Make</option>
+                                <option value="2921">TZ Medical</option>
+                                <option value="2921">PAS</option>
+                                <option value="1563">G-medical Innovations</option>
+                                <option value="1563">DMS Service</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Model</option>
+                                <option value="3549">Clarus 40</option>
+                                <option value="3549">RJ421-0050</option>
+                                <option value="3549">GMP</option>
+                                <option value="1563">DMS Service</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Enter Serial Number</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form">
+                            <input type="text" id="mN1" class="form-control">
+                            <label for="mN1">Confirm Serial Number</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" id="getdata" class="btn btn-primary">Save</button>
+                <button type="button" id="getdata" class="btn btn-primary">Clear</button>
+                <button type="button" id="getdata" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ExportDevice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Export Devices</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="row">
+                    <div class="col-sm-12 manage-device">
+                        <select class="mdb-select md-form" multiple>
+                            <option value="" disabled selected>Select Group</option>
+                            <option value="2211">All</option>
+                            <option value="2211">Advanced Cardiovascular Associates</option>
+                            <option value="2115">Advanced Cardiovascular Consultants</option>
+                            <option value="2236">AICD Heart</option>
+                            <option value="2280">Alan L. Kalischer, MD</option>
+                            <option value="2237">Alexander Mathew, MD</option>
+                            <option value="2157">Alliance Health Medical Group</option>
+                            <option value="2201">Amiry Cardiology Consultants</option>
+                            <option value="2271">Anthony Inguaggiato, MD</option>
+                            <option value="2181">Appalachian Cardiovascular Associates</option>
+                            <option value="2238">Ariani &amp; Saleh, MD</option>
+                            <option value="2230">Arizona Heart Rhythm Center</option>
+                            <option value="2106">Ascension - Dr Lanzarotti</option>
+                            <option value="2112">Ascension - Dr. Michael Curley</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12">
+                        <select class="mdb-select md-form">
+                            <option value="" disabled selected>Select Location</option>
+                            <option value="2211">Austin</option>
+                            <option value="2115">Test001</option>
+                            <option value="2115">Test002</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" id="getdata" class="btn btn-global-green">Export</button>
+                    <button type="button" id="getdata" class="btn btn-primary">Clear</button>
+                    <button type="button" id="getdata" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="importDevice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Import Devices</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <div class="md-form">
+                            <form class="md-form">
+                                <div class="file-field">
+                                    <div class="btn btn-primary btn-sm float-left"> <span>Choose file</span>
+                                        <input type="file">
+                                    </div>
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="File Upload">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 text-right"> <a class="btn btn-primary btn-sm text-right">Download template</a></div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" id="getdata" class="btn btn-global-green">Import</button>
+                    <button type="button" id="getdata" class="btn btn-primary">Clear</button>
+                    <button type="button" id="getdata" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="DeviceHistory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Device Transfer Log</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                        <div class="table-responsive text-nowrap">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Serial No.</th>
+                                        <th scope="col">Past Group</th>
+                                        <th scope="col">Current Group</th>
+                                        <th scope="col">Transferred By</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Transferred On</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>H3R3300580</td>
+                                        <td> Elmbrook Memorial Cardiac Diagnostic Unit</td>
+                                        <td>GMedical Device Repository</td>
+                                        <td>Lohman,Tim</td>
+                                        <td>Available</td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06:48 AM</small></span> </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H3R3300580</td>
+                                        <td> Elmbrook Memorial Cardiac Diagnostic Unit</td>
+                                        <td>GMedical Device Repository</td>
+                                        <td>Lohman,Tim</td>
+                                        <td>Available</td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06:48 AM</small></span> </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H3R3300580</td>
+                                        <td> Elmbrook Memorial Cardiac Diagnostic Unit</td>
+                                        <td>GMedical Device Repository</td>
+                                        <td>Lohman,Tim</td>
+                                        <td>Available</td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06:48 AM</small></span> </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H3R3300580</td>
+                                        <td> Elmbrook Memorial Cardiac Diagnostic Unit</td>
+                                        <td>GMedical Device Repository</td>
+                                        <td>Lohman,Tim</td>
+                                        <td>Available</td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06:48 AM</small></span> </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H3R3300580</td>
+                                        <td> Elmbrook Memorial Cardiac Diagnostic Unit</td>
+                                        <td>GMedical Device Repository</td>
+                                        <td>Lohman,Tim</td>
+                                        <td>Available</td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06:48 AM</small></span> </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>H3R3300580</td>
+                                        <td> Elmbrook Memorial Cardiac Diagnostic Unit</td>
+                                        <td>GMedical Device Repository</td>
+                                        <td>Lohman,Tim</td>
+                                        <td>Available</td>
+                                        <td class="dt-tme"><span class="date">06/15/1990 <span class="time" ><small>10:06:48 AM</small></span> </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" id="getdata" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="TransferDevice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Transfer Device</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="input-group md-form mt-0">
+                            <input class="form-control" type="text" placeholder="Search by Serial No"> <span class="pt-3" id="basic-text1" style="margin-left:-20px;"><i class="fa fa-search grey-text" aria-hidden="true" ></i></span></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="input-group md-form mt-0">
+                            <input class="form-control" type="text" placeholder="Search by Group name or Location"> <span class="pt-3" id="basic-text1" style="margin-left:-20px;"><i class="fa fa-search grey-text" aria-hidden="true" ></i></span></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6"> <span> <label>From Group</label> </span>
+                        <div class="md-form mt-0">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Select Group</option>
+                                <option value="2211">Advanced Cardiovascular Associates</option>
+                                <option value="2115">Advanced Cardiovascular Consultants</option>
+                                <option value="2236">AICD Heart</option>
+                                <option value="2280">Alan L. Kalischer, MD</option>
+                                <option value="2237">Alexander Mathew, MD</option>
+                                <option value="2157">Alliance Health Medical Group</option>
+                                <option value="2201">Amiry Cardiology Consultants</option>
+                                <option value="2271">Anthony Inguaggiato, MD</option>
+                                <option value="2181">Appalachian Cardiovascular Associates</option>
+                                <option value="2238">Ariani &amp; Saleh, MD</option>
+                                <option value="2230">Arizona Heart Rhythm Center</option>
+                                <option value="2106">Ascension - Dr Lanzarotti</option>
+                                <option value="2112">Ascension - Dr. Michael Curley</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6"> <span> <label>To Group</label> </span>
+                        <div class="md-form mt-0">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected> Select Group</option>
+                                <option value="2211">Advanced Cardiovascular Associates</option>
+                                <option value="2115">Advanced Cardiovascular Consultants</option>
+                                <option value="2236">AICD Heart</option>
+                                <option value="2280">Alan L. Kalischer, MD</option>
+                                <option value="2237">Alexander Mathew, MD</option>
+                                <option value="2157">Alliance Health Medical Group</option>
+                                <option value="2201">Amiry Cardiology Consultants</option>
+                                <option value="2271">Anthony Inguaggiato, MD</option>
+                                <option value="2181">Appalachian Cardiovascular Associates</option>
+                                <option value="2238">Ariani &amp; Saleh, MD</option>
+                                <option value="2230">Arizona Heart Rhythm Center</option>
+                                <option value="2106">Ascension - Dr Lanzarotti</option>
+                                <option value="2112">Ascension - Dr. Michael Curley</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form mt-0">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Location</option>
+                                <option value="20">Austin</option>
+                                <option value="21">Bannockburn</option>
+                                <option value="18">Test Location1</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form mt-0">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Location</option>
+                                <option value="20">Austin</option>
+                                <option value="21">Bannockburn</option>
+                                <option value="18">Test Location1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="table-responsive text-nowrap" style="height:200px; overflow-y:auto; border:1px solid #ddd;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Make</th>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">Serial No</th>
+                                        <th scope="col">Patient Name</th>
+                                        <th scope="col">DOB</th>
+                                        <th scope="col">Study Id</th>
+                                        <th scope="col">Group Name</th>
+                                        <th scope="col">Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TZ Medical</td>
+                                        <td>Clarus 40</td>
+                                        <td> 12345</td>
+                                        <td>test001</td>
+                                        <td>15/06/1990</td>
+                                        <td>123456788</td>
+                                        <td>G-medical demo</td>
+                                        <td>Test001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TZ Medical</td>
+                                        <td>Clarus 40</td>
+                                        <td> 12345</td>
+                                        <td>test001</td>
+                                        <td>15/06/1990</td>
+                                        <td>123456788</td>
+                                        <td>G-medical demo</td>
+                                        <td>Test002</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TZ Medical</td>
+                                        <td>Clarus 40</td>
+                                        <td> 12345</td>
+                                        <td>test001</td>
+                                        <td>15/06/1990</td>
+                                        <td>123456788</td>
+                                        <td>G-medical demo</td>
+                                        <td>Test001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TZ Medical</td>
+                                        <td>Clarus 40</td>
+                                        <td> 12345</td>
+                                        <td>test001</td>
+                                        <td>15/06/1990</td>
+                                        <td>123456788</td>
+                                        <td>G-medical demo</td>
+                                        <td>Test001</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div> <span class="transfr-icon" style="cursor:pointer;"><i class="fa fa-arrow-right" aria-hidden="true" ></i></span></div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div style="height:200px; border:1px solid #ddd;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="mt-3 mb-0"> Notes</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="md-form mt-0">
+                            <div class="form-group">
+                                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" id="getdata" class="btn btn-global-green">Transfer</button>
+                <button type="button" id="getdata" class="btn btn-primary">Clear</button>
+                <button type="button" id="getdata" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ReplaceDevice" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Replace Device</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6"> <span> <label>Select Device to Replace </label> </span>
+                        <div class="input-group md-form mt-0">
+                            <input class="form-control" type="text" placeholder="Patient Name"> <span class="pt-3" id="basic-text1" style="margin-left:-20px;"><i class="fa fa-search grey-text" aria-hidden="true" ></i></span></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6"> <span> <label>Select Device to Replace with</label> </span>
+                        <div class="input-group md-form mt-0">
+                            <input class="form-control" type="text" placeholder="Search by"> <span class="pt-3" id="basic-text1" style="margin-left:-20px;"><i class="fa fa-search grey-text" aria-hidden="true" ></i></span></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form mt-0">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Select Group</option>
+                                <option value="2211">Advanced Cardiovascular Associates</option>
+                                <option value="2115">Advanced Cardiovascular Consultants</option>
+                                <option value="2236">AICD Heart</option>
+                                <option value="2280">Alan L. Kalischer, MD</option>
+                                <option value="2237">Alexander Mathew, MD</option>
+                                <option value="2157">Alliance Health Medical Group</option>
+                                <option value="2201">Amiry Cardiology Consultants</option>
+                                <option value="2271">Anthony Inguaggiato, MD</option>
+                                <option value="2181">Appalachian Cardiovascular Associates</option>
+                                <option value="2238">Ariani &amp; Saleh, MD</option>
+                                <option value="2230">Arizona Heart Rhythm Center</option>
+                                <option value="2106">Ascension - Dr Lanzarotti</option>
+                                <option value="2112">Ascension - Dr. Michael Curley</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form mt-0">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Select Group</option>
+                                <option value="2211">Advanced Cardiovascular Associates</option>
+                                <option value="2115">Advanced Cardiovascular Consultants</option>
+                                <option value="2236">AICD Heart</option>
+                                <option value="2280">Alan L. Kalischer, MD</option>
+                                <option value="2237">Alexander Mathew, MD</option>
+                                <option value="2157">Alliance Health Medical Group</option>
+                                <option value="2201">Amiry Cardiology Consultants</option>
+                                <option value="2271">Anthony Inguaggiato, MD</option>
+                                <option value="2181">Appalachian Cardiovascular Associates</option>
+                                <option value="2238">Ariani &amp; Saleh, MD</option>
+                                <option value="2230">Arizona Heart Rhythm Center</option>
+                                <option value="2106">Ascension - Dr Lanzarotti</option>
+                                <option value="2112">Ascension - Dr. Michael Curley</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form mt-0">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Location</option>
+                                <option value="20">Austin</option>
+                                <option value="21">Bannockburn</option>
+                                <option value="18">Test Location1</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="md-form mt-0">
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Location</option>
+                                <option value="20">Austin</option>
+                                <option value="21">Bannockburn</option>
+                                <option value="18">Test Location1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="table-responsive text-nowrap" style="height:200px; overflow-y:auto; border:1px solid #ddd;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Patient Name</th>
+                                        <th scope="col">Group Name</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Study Id</th>
+                                        <th scope="col">Make</th>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">Serial No</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div> <span class="transfr-icon" style="cursor:pointer;"><i class="fa fa-arrow-left" aria-hidden="true" ></i></span></div>
+                    <div class="col-sm-12 col-lg-6 col-xl-6">
+                        <div class="table-responsive text-nowrap" style="height:200px; overflow-y:auto; border:1px solid #ddd;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Make</th>
+                                        <th scope="col">Model</th>
+                                        <th scope="col">Serial No</th>
+                                        <th scope="col">Group Name</th>
+                                        <th scope="col">Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TZ Medical</td>
+                                        <td>Clarus 40</td>
+                                        <td> 12345</td>
+                                        <td>G-medical demo</td>
+                                        <td>Test001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TZ Medical</td>
+                                        <td>Clarus 40</td>
+                                        <td> 12345</td>
+                                        <td>G-medical demo</td>
+                                        <td>Test001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TZ Medical</td>
+                                        <td>Clarus 40</td>
+                                        <td> 12345</td>
+                                        <td>G-medical demo</td>
+                                        <td>Test001</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TZ Medical</td>
+                                        <td>Clarus 40</td>
+                                        <td> 12345</td>
+                                        <td>G-medical demo</td>
+                                        <td>Test001</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="mb-0 mt-3">Reason</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="md-form mt-0">
+                            <div class="form-group">
+                                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" id="getdata" class="btn btn-global-green">Replace</button>
+                <button type="button" id="getdata" class="btn btn-primary">Clear</button>
+                <button type="button" id="getdata" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="AdvanceSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Advance Search</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <select class="mdb-select colorful-select dropdown-primary">
+                            <option value="" disabled selected>Make</option>
+                            <option value="2921">TZ Medical</option>
+                            <option value="2921">PAS</option>
+                            <option value="1563">G-Medical Innovations</option>
+                            <option value="1563">DMS Service</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                        <select class="mdb-select colorful-select dropdown-primary">
+                            <option value="" disabled selected>Model</option>
+                            <option value="3549">Clarus 40</option>
+                            <option value="3549">RJ421-0050</option>
+                            <option value="3549">GMP</option>
+                            <option value="1563">DMS Service</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="md-form">
+                            <input type="text" id="form3" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="form3">Serial No</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="md-form">
+                            <select class="mdb-select colorful-select dropdown-info">
+                                <option value="" disabled selected>Status</option>
+                                <option value="">All</option>
+                                <option value="">Assigned</option>
+                                <option value="">Available</option>
+                                <option value="">De-Activated</option>
+                                <option value="">Sent for repair</option>
+                                <option value="">End of life retired</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="md-form">
+                            <input placeholder="From Date" type="text" id="date-picker-example" class="form-control datepicker">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="md-form">
+                            <input placeholder="To Date" type="text" id="date-picker-example" class="form-control datepicker">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="md-form">
+                            <input type="text" id="form4" class="form-control validate">
+                            <label data-error="" data-success="" for="form3">Groupname</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="md-form">
+                            <input type="text" id="form454" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="form3">Study Id</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="md-form">
+                            <input type="email" id="form2" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="form2">Patient First Name</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="md-form">
+                            <input type="email" id="form2" class="form-control validate">
+                            <label data-error="wrong" data-success="right" for="form2">Patient Last Name</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="md-form">
+                            <select class="mdb-select colorful-select dropdown-info">
+                                <option value="" disabled selected>Location</option>
+                                <option value="">Austin</option>
+                                <option value="">Test001</option>
+                                <option value="">Test002</option>
+                                <option value="">Test001</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-3">
+                                <label>Collate by</label>
+                            </div>
+                            <div class="switch col-sm-6 col-lg-4">
+                                <label> Off
+                                    <input type="checkbox" checked id="collate"> <span class="lever"></span> On </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12" id="searcharea-physcn" style="border: 1px solid #ddd; padding: 5px;">
+                        <div class="form-check pl-0">
+                            <input type="checkbox" class="form-check-input" id="materialInline1">
+                            <label class="form-check-label" for="materialInline1">Make and Model</label>
+                        </div>
+                        <div class="form-check pl-0">
+                            <input type="checkbox" class="form-check-input" id="materialInline1">
+                            <label class="form-check-label" for="materialInline1">Groupname</label>
+                        </div>
+                        <div class="form-check pl-0">
+                            <input type="checkbox" class="form-check-input" id="materialInline1">
+                            <label class="form-check-label" for="materialInline1">Status</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" id="getdata" class="btn btn-global-green"><i class="fa fa-search pr-2"></i>Search</button>
+                <button type="button" id="getdata" class="btn btn-primary"><i class="fa fa-filter pr-2"></i>Clear</button>
+                <button type="button" id="getdata" class="btn btn-primary" data-dismiss="modal" aria-label="Close"><i class="fa fa-close pr-2"></i>Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
