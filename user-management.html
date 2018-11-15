@@ -108,7 +108,8 @@
                     <div class="col-xl-6 col-lg-6 col-md-12">
                         <div class="card cstm-card-success">
                             <p class="card-header white-text">
-                                <span class="btn btn-sm btn-badge-green">4256</span>Total Roles
+                                <span class="btn btn-sm btn-badge-green"><span class="">15</span> <span>::</span> <span class="" style="color: #c8f981;">10 </span>
+                                </span>Total Roles
 
                             </p>
                             <div class="card-body pt-2">
@@ -182,7 +183,7 @@
                             <ul class="nav justify-content-end">
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="modal" data-target="#AddUser">
-                                        <span data-toggle="tooltip" data-placement="top" title="Add User"> <i class="fa fa-plus" aria-hidden="true" ></i></span>
+                                        <span data-toggle="tooltip" data-placement="top" title="Add User" ID="T1"> <i class="fa fa-plus" aria-hidden="true" ></i></span>
                                     </a>
                                 </li>
 
@@ -273,7 +274,7 @@
                                     <td>Test001</td>
                                     <td>G-medical demo</td>
                                     <td>Austin</td>
-                                    <td>Admin</td>
+                                    <td>Doctor</td>
 
 
                                     <td>(256) 543-1770</td>
@@ -290,7 +291,7 @@
                                     <td>Test001</td>
                                     <td>G-medical demo</td>
                                     <td>Austin</td>
-                                    <td>Admin</td>
+                                    <td>Both</td>
 
 
                                     <td>(256) 543-1770</td>
@@ -428,6 +429,13 @@
             $('#collate').click(function() {
                 $('#searcharea-physcn').toggle();
             });
+            $('#EditAccess').click(function() {
+                $('#EditAccess-container').toggle();
+            });
+
+            // $('#T1').click(function() {
+            //     $('#EditAccess-container').hide();
+            // });
         });
     </script>
 </body>
@@ -550,7 +558,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header  text-center">
-                <h4 class="modal-title w-100 font-bold">Add User</h4>
+                <h4 class="modal-title w-100 font-bold">Invite/Add User</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -558,248 +566,220 @@
             <div class="modal-body">
 
                 <div class="row">
-                    <div class="col-sm-12  col-lg-4 col-xl-4">
-                        <!-- Material input -->
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
                         <div class="md-form">
-                            <input type="text" id="mN1" class="form-control">
-                            <label for="mN1">Name <span class="required">*</span></label>
+
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Group Name</option>
+                                <option value="0">All</option>
+                                <option value="1563">G-Medical Innovations</option>
+                                <option value="3549">Test001</option>
+                                <option value="3549">Test002</option>
+                                <option value="1563">Test003</option>
+                            </select>
+
                         </div>
                     </div>
                     <!-- Grid column -->
-                    <div class="col-sm-12  col-lg-4 col-xl-4">
+                    <div class="col-sm-12  col-lg-6 col-xl-6">
                         <!-- Material input -->
                         <div class="md-form">
-                            <input type="text" id="mN1" class="form-control">
-                            <label for="mN1">User Id <span class="required">*</span></label>
+                            <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Location</option>
+                                <option value="0">All</option>
+                                <option value="3549">Austin</option>
+                                <option value="3549">Test001</option>
+                                <option value="3549">Test002</option>
+                                <option value="1563">Test003</option>
+                            </select>
                         </div>
                     </div>
                     <!-- Grid column -->
-                    <div class="col-sm-12  col-lg-4 col-xl-4">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <input type="text" id="mN1" class="form-control">
-                            <label for="mN1">Password <span class="required">*</span></label>
-                        </div>
-                    </div>
-
-
                 </div>
                 <!-- Grid row -->
-
-
                 <div class="row">
-
-                    <!-- Grid column -->
                     <div class="col-sm-12  col-lg-6 col-xl-6">
                         <!-- Material input -->
                         <div class="md-form">
-
                             <select class="mdb-select colorful-select dropdown-primary">
-                                    <option value="" disabled selected>Role<span class="required">*</span></option>
-                                    <option value="Doctor">Doctor</option>
-                                    <option value="Admin">Admin</option>
-                                    <option value="Both">Both</option>
-    
-    
-                                </select>
-
+                                <option value="" disabled selected>Role<span class="required">*</span></option>
+                                <option value="0">All</option>
+                                <option value="1">Admin</option>
+                                <option value="2">Doctor</option>
+                                <option value="3">Both</option>                         
+                            </select>
                         </div>
                     </div>
-                    <!-- Grid column -->
-
                     <div class="col-sm-12  col-lg-6 col-xl-6">
                         <!-- Material input -->
                         <div class="md-form">
-
                             <select class="mdb-select colorful-select dropdown-primary">
-                                    <option value="" disabled selected>Salutation<span class="required">*</span></option>
+                                    <option value="" disabled selected>Title<span class="required">*</span></option>
+                                    <option value="Mr">Dr</option>
                                     <option value="Mr">Mr</option>
                                     <option value="Ms">Ms</option>
-                                    
-    
-    
+                                    <option value="Ms">Mrs</option>                                    
                                 </select>
-
                         </div>
                     </div>
 
                 </div>
                 <div class="row">
-                    <div class="col-sm-12  col-lg-6 col-xl-6">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <input type="text" id="mN1" class="form-control">
-                            <label for="mN1">First Name <span class="required">*</span></label>
-                        </div>
+                    <div class="col-sm-12 text-right">
+                        <a class="btn btn-primary" id="EditAccess"><i class="fa fa-pencil pr-2"></i>Edit Access</a>
                     </div>
-                    <!-- Grid column -->
-                    <!-- Grid column -->
-                    <div class="col-sm-12  col-lg-6 col-xl-6">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <input type="text" id="mN1" class="form-control">
-                            <label for="mN1">Last Name <span class="required">*</span></label>
-                        </div>
-                    </div>
-
-
                 </div>
-                <div class="row">
-
-                    <!-- Grid column -->
-
-
-                    <div class="col-sm-12  col-lg-6 col-xl-6">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <!-- Material input -->
-                            <div class="md-form">
-                                <input type="text" id="lN1" class="form-control">
-                                <label for="lN1">Middle Name </label>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- Grid column -->
-                    <div class="col-sm-12  col-lg-6 col-xl-6">
-                        <!-- Material input -->
-                        <div class="md-form">
+                <div class="" id="EditAccess-container">
+                    <div class="row">
+                        <div class="col-sm-12  col-lg-4 col-xl-4">
                             <!-- Material input -->
                             <div class="md-form">
                                 <input type="text" id="mN1" class="form-control">
-                                <label for="mN1">Degree </label>
+                                <label for="mN1">First Name <span class="required">*</span></label>
                             </div>
-
                         </div>
-                    </div>
-                    <!-- Grid column -->
-
-                </div>
-                <!-- Grid row -->
-
-                <div class="row">
-
-                    <div class="col-sm-12">
-                        <div class="md-form">
-                            <input type="text" id="st2" class="form-control">
-                            <label for="st2">
-                                                        Address </label>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-
-                    <!-- Grid column -->
-                    <div class="col-sm-12  col-lg-4 col-xl-4">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <input type="text" id="st1" class="form-control">
-                            <label for="st1">City <span class="required">*</span></label>
-
-                        </div>
-                    </div>
-                    <!-- Grid column -->
-
-                    <div class="col-sm-12  col-lg-4 col-xl-4">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <input type="text" id="st2" class="form-control">
-                            <label for="st2">State <span class="required">*</span></label>
-
-                        </div>
-                    </div>
-                    <div class="col-sm-12  col-lg-4 col-xl-4">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <input type="text" id="st2" class="form-control">
-                            <label for="st2">Zip <span class="required">*</span></label>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-sm-12  col-lg-4 col-xl-4">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <input type="text" id="mN1" class="form-control">
-                            <label for="mN1" class=""> Phone</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12  col-lg-4 col-xl-4">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <input type="text" id="mN1" class="form-control">
-                            <label for="mN1" class="">Fax</label>
-                        </div>
-                    </div>
-                    <!-- Grid column -->
-                    <div class="col-sm-12  col-lg-4 col-xl-4">
-                        <!-- Material input -->
-                        <div class="md-form">
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-sm-12  col-lg-4 col-xl-4">
                             <!-- Material input -->
                             <div class="md-form">
+                                <input type="text" id="mN10" class="form-control">
+                                <label for="mN10">Middle Name <span class="required">*</span></label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="mN100" class="form-control">
+                                <label for="mN100">Last Name <span class="required">*</span></label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-12  col-lg-6 col-xl-6">
+
+                            <div class="md-form">
+                                <select class="mdb-select colorful-select dropdown-primary">
+                                <option value="" disabled selected>Junior</option>
+                                <option value="Mr">Junior</option>
+                                <option value="Mr">Senior</option>
+                                <option value="Ms">I</option>
+                                <option value="Ms">II</option>                                    
+                            </select>
+
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                            <div class="md-form" style="margin-top:2.1rem;">
+                                <!-- Material input -->
+
                                 <input type="text" id="fN1" class="form-control">
                                 <label for="fN1" class="">Email <span class="required">*</span></label>
                             </div>
-
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-6 col-xl-6">
+                            <div class="md-form">
+                                <input type="text" id="st2" class="form-control">
+                                <label for="st2"> Address1 </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6 col-xl-6">
+                            <div class="md-form">
+                                <input type="text" id="st2" class="form-control">
+                                <label for="st2"> Address2 </label>
+                            </div>
                         </div>
                     </div>
-                    <!-- Grid column -->
-
-                </div>
-
-                <div class="row">
-
-
-                    <div class="col-sm-12  col-lg-3 col-xl-3">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <input type="text" id="mN1" class="form-control">
-                            <label for="mN1" class="">Reference</label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12  col-lg-3 col-xl-3">
-                        <!-- Material input -->
-                        <div class="md-form">
-                            <input type="text" id="mN1" class="form-control">
-                            <label for="mN1" class="">NPI Number <span class="required">*</span></label>
-                        </div>
-                    </div>
-                    <!-- Grid column -->
-                    <div class="col-sm-12  col-lg-6 col-xl-6 p-0" style="margin-top:2.5rem;">
-                        <!-- Material input --
-                        <div class="md-form">
+                    <div class="row">
+                        <!-- Grid column -->
+                        <div class="col-sm-12  col-lg-4 col-xl-4">
                             <!-- Material input -->
-                        <!-- Material unchecked --
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="materialUnchecked">
-                                <label class="form-check-label" for="materialUnchecked">Can E-Sign</label>
+                            <div class="md-form">
+                                <input type="text" id="st1" class="form-control">
+                                <label for="st1">City <span class="required">*</span></label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="st2" class="form-control">
+                                <label for="st2">State <span class="required">*</span></label>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-12  col-lg-4 col-xl-4">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="st2" class="form-control">
+                                <label for="st2">Zip <span class="required">*</span></label>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="mN1" class="form-control">
+                                <label for="mN1" class=""> Telephone</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12  col-lg-6 col-xl-6">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="mN1" class="form-control">
+                                <label for="mN1" class="">Reference</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-12  col-lg-5 col-xl-5">
+                            <!-- Material input -->
+                            <div class="md-form">
+                                <input type="text" id="mN1" class="form-control">
+                                <label for="mN1" class="">NPI Number (If it is a Physician) <span class="required">*</span></label>
+                            </div>
+                        </div>
+                        <!-- Grid column -->
+                        <div class="col-sm-12  col-lg-7 col-xl-7" style="margin-top:2.5rem;">
+                            <!-- Material inline 1 -->
+                            <div class="form-check form-check-inline mr-0">
+                                <input type="checkbox" class="form-check-input" id="materialInline001">
+                                <label class="form-check-label" for="materialInline001">Global Reading Physician</label>
                             </div>
 
-                        </div>-->
-                        <!-- Material inline 1 -->
-                        <div class="form-check form-check-inline mr-0">
-                            <input type="checkbox" class="form-check-input" id="materialInline001">
-                            <label class="form-check-label" for="materialInline001">Global Reading Physician</label>
+                            <!-- Material inline 2 -->
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" class="form-check-input" id="materialInline2">
+                                <label class="form-check-label" for="materialInline2">Can E-Sign</label>
+                            </div>
                         </div>
-
-                        <!-- Material inline 2 -->
-                        <div class="form-check form-check-inline">
-                            <input type="checkbox" class="form-check-input" id="materialInline2">
-                            <label class="form-check-label" for="materialInline2">Can E-Sign</label>
-                        </div>
-
-
+                        <!-- Grid column -->
                     </div>
-                    <!-- Grid column -->
                 </div>
+
 
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <button type="button" id="getdata" class="btn btn-global-green"><i class="fa fa-plus pr-2"></i>Save</button>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn  btn-global-green"><i class="fa fa-user pr-2"></i>Invite user</button>
+                    <button type="button" class="btn btn-primary"><i class="fa fa-user pr-2"></i>Invite New User</button>
+
+                </div>
                 <button type="button" id="getdata" class="btn btn-primary"><i class="fa fa-filter pr-2"></i>Clear</button>
                 <button type="button" id="getdata" class="btn btn-primary" data-dismiss="modal" aria-label="Close"><i class="fa fa-close pr-2"></i>Close</button>
             </div>
@@ -808,4 +788,4 @@
 </div>
 
 
-</html>
+</html
